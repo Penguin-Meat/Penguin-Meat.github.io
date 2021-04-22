@@ -1,5 +1,5 @@
   
-[username].github.io仓库已创建
+[Penguin-Meat].github.io仓库已创建
 或名为 miao 的仓库 Github Pages 服务已启用
 状态：请求文件成功
 
