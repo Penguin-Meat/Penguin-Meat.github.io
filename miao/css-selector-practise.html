@@ -5,11 +5,16 @@
     <meta charset="utf-8">
     <title>Document</title>
     <style>
-        body>p:first-child,
-        [tabindex$="-1"]:hover,
+        body>p :first-child,
+        [tabindex$="1"]:hover,
         p.c>span,
         div.a li:nth-child(n + 4):nth-child(-n +7),
-        div.b li:nth-child(-n+25) {
+        div.b li:nth-child(-n+25),
+        div.prime li:nth-child(2n + 2),
+        div.prime li:nth-child(3n + 3),
+        div.prime li:nth-child(5n + 5),
+        div.prime li:nth-child(7n + 14),
+        div.prime li:nth-child(11n + 22) {
             color: red;
         }
         
@@ -17,14 +22,14 @@
             color: pink;
         }
         
-        [tabindex$="-1"]:focus,
+        [tabindex$="1"]:focus,
         p.c>span>span:last-child,
         a[href*="mailto:" i],
         div.b li:nth-child(n + 35):nth-child(-n +50) {
             color: blue;
         }
         
-        [tabindex$="-1"]:active,
+        [tabindex$="1"]:active,
         p.c>span>span,
         div.b li:nth-child(n+65) {
             color: green;
@@ -49,7 +54,7 @@
 
     <p>红色</p>
 
-    <p class="a" tabindex="-1">鼠标悬浮时为红色，按下去时为绿色，获得焦点时为蓝色</p>
+    <p class="a" tabindex="1">鼠标悬浮时为红色，按下去时为绿色，获得焦点时为蓝色</p>
 
     <p class="a c">
         <span>红色
