@@ -9,7 +9,6 @@
     <style>
         body {
             margin: 0;
-            ;
         }
         
         header {
@@ -56,23 +55,61 @@
             margin: auto;
             text-align: center;
         }
-        /* .g {
+        
+        .bb {
             width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        } */
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        
+        div>div {
+            border: 3px solid black;
+            width: 174px;
+            height: 34px;
+            margin-top: 15px;
+            background-color: pink;
+            text-align: center;
+            line-height: 34px;
+        }
+        
+        div>div:hover {
+            background-color: red;
+        }
+        
+        div>:nth-child(n + 5) {
+            margin-left: 210px;
+            margin-top: 40;
+        }
+        
+        div>:nth-child(n + 9) {
+            margin-left: 420px;
+        }
+        
+        div>:nth-child(4n + 5) {
+            margin-top: -205px;
+        }
     </style>
-</head>
-
-<body>
     <header>
         <p class="a">hello world 请调整浏览器窗口大小查看效果</p>
 
     </header>
     <br>
     <p class="b">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
-    <br>
-    <div class="testbox">123</div>
+
+    <div class="bb">
+        <div>宽180高40(包含边框)</div>
+        <div>水平间隙30px</div>
+        <div>垂直间隙15px</div>
+        <div>边框宽度3px</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>产品</div>
+    </div>>
 
     <p class="c"></p>
 
@@ -81,7 +118,7 @@
     <P class="d">link</P>
     <P class="d">link</P>
     <P class="e">link</P>
-    <br>
+
     <footer>
         <p class="f">©版权所有 <br> 本页所有布局均使用块元素
         </p>
@@ -89,6 +126,6 @@
 
 
 
-</body>
+    </body>
 
 </html>
