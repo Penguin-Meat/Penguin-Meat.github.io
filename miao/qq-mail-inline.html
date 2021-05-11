@@ -5,46 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QQ-MAIL-POSITION</title>
+    <title>QQ-MAIL-inline</title>
     <style>
         body {
             margin: 0;
+            padding: 0;
+        }
+        
+        .left,
+        .right {
+            display: inline-block;
         }
         
         header {
-            height: 90px;
-            border-bottom: 3px solid black;
+            height: 70px;
+            border-bottom: 2px solid black;
             background-color: aqua;
         }
         
-        section {
+        span {
             position: relative;
-            height: calc(100vh - 93px);
+            height: calc(100vh - 72px);
         }
         
-        .left {
-            width: 200px;
-            height: 100%;
+        span>.left {
+            width: 190px;
+            height: auto;
             background-color: rgb(35, 148, 192);
-            border-right: 3px solid black;
+            border-right: 2px solid black;
         }
         
-        .right {
-            position: absolute;
-            left: 203px;
+        span.right {
             overflow: auto;
             top: 0;
-            bottom: 0;
             background-color: brown;
         }
     </style>
 </head>
 
 <body>
-    <header>QQ-MAIL-POSITION</header>
-    <section>
-        <div class="left"></div>
-        <div class="right">
+    <header>QQ-MAIL-inline</header>
+    <span>
+    <span class="left"></span>
+    <span class="right">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos omnis ut unde! Asperiores exercitationem, tempora quisquam minus quia culpa dolores ipsum esse, repellat neque fugiat consequatur at dignissimos molestias. Quaerat error itaque quidem ipsam
             magni? Vitae neque, quibusdam ad laudantium accusantium eum aspernatur qui unde doloremque! Modi iusto earum sed repudiandae? Odio minus enim quo tempora laborum atque, commodi asperiores, velit tenetur deserunt nemo quia magni quaerat dolorum.
             Quaerat aliquam, harum, qui tempora minus dicta labore, eius doloremque quis nulla ullam. Dolores adipisci ipsa hic dolore harum reiciendis optio sapiente aspernatur veniam eligendi praesentium perferendis odio, ducimus minus saepe accusamus
@@ -76,9 +79,8 @@
             doloremque velit reiciendis amet quo harum, nobis a earum nemo id incidunt molestiae accusantium, hic consequuntur maiores ratione. Reprehenderit corrupti, laborum illo, iure dignissimos id laboriosam ipsam expedita officiis ab quo qui iusto
             distinctio unde aliquam quaerat deserunt assumenda? Praesentium vitae ad sit earum. Distinctio dolorum facere possimus fugiat accusamus veniam iure! Eum commodi itaque enim, fugit expedita at porro quod tenetur odio dolor ad nemo a dolores.
             Consequatur provident deleniti maxime. Illum numquam esse natus molestiae reiciendis. Vel voluptates eaque obcaecati expedita quia, libero similique, ipsam delectus et debitis repellendus ipsum voluptas quae consequatur omnis. A recusandae
-            doloribus praesentium quasi quam excepturi reiciendis?
-        </div>
-    </section>
+            doloribus praesentium quasi quam excepturi reiciendis?</span>
+    </span>
 
 </body>
 
