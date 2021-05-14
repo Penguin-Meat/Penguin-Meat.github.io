@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu-test</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul.a>li {
+            display: inline-block;
+            position: relative
+        }
+        
+        ul>li {
+            display: inline-block;
+            background-color: salmon;
+        }
+        
+        ul>li:hover {
+            background-color: skyblue;
+        }
+        
+        ul.a>li>ul>li {
+            position: absolute;
+            display: block;
+        }
+        
+        ul.a>li>ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="a">
+        <li>Lorem
+            <ul>
+                <li>Lorem</li>
+                <li>ipsum</li>
+                <li>Lorea</li>
+                <li>lqwewe</li>
+            </ul>
+        </li>
+        <li>ipsum</li>
+        <li>Lorea</li>
+        <li>lqwewe</li>
+    </ul>
+
+</body>
+
+
+
+
+</html>

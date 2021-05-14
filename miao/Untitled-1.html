@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hi {
+        width: 50px;
+        height: 72px;
+        background-image: url("http://s.cdpn.io/79/sprite-steps.png");
+        /*深度理解
+      *整个动画1s完成。
+      *这里1s要移动500的像素，这1s要有十步走完，每步是平均下来是0.1s，
+      *每步比上一步多走了72px的位置，这个走是瞬间走到的。
+      *end表示每一步在接近0.1s再去走
+      */
+        animation: play 1s steps(10) infinite;
+    }
+    /*定义动画*/
+    
+    .hi:hover play {
+        from {
+            background-position: 0px 0px;
+        }
+        to {
+            background-position: -500px 0px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="hi"></div>
+</body>
+
+</html>

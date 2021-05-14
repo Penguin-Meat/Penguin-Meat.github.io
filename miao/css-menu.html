@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+  , initial-scale=1.0">
+    <title>css-menu</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul.aa>li {
+            display: inline-block;
+            /* 这里的我开始写错了,把inline-block写进 整个li里面
+  这里应该是ul.aa下的li */
+        }
+        
+        li {
+            white-space: nowrap;
+            /* 发现每一个li都有点窄,因为是被元素撑开的,不能超过包含块,加一个属性让它
+  调整 */
+            border: 1px solid red;
+            background-color: red;
+            position: relative;
+            /* 每一层的li都是它下面包含ul的定位祖先 */
+        }
+        
+        ul.aa li:hover {
+            background-color: yellow;
+            /* 能够让ul和li同时被hover变色 */
+        }
+        
+        ul.aa ul {
+            position: absolute;
+            /* 相对父级也就是上一层的li定位 */
+            display: none;
+        }
+        
+        li:hover>ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>this is menu</h1>
+    <ul class="aa">
+        <li>one
+            <ul>
+                <li>aa</li>
+                <li>bb</li>
+                <li>cc</li>
+            </ul>
+        </li>
+        <li>two
+            <ul>
+                <li>dd</li>
+                <li>ee</li>
+                <li>ff</li>
+                <li>gg</li>
+            </ul>
+        </li>
+        <li>three
+            <ul>
+                <li>123</li>
+                <li>123</li>
+                <li>312</li>
+                <li>123</li>
+            </ul>
+        </li>
+
+    </ul>
+
+</body>
+
+</html>
