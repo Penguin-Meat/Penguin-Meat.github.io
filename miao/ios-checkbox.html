@@ -1,29 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-
-
-
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
     <style>
-        div {
-            background-color: rgb(red, green, blue);
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        label {
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+            border: 3px solid grey;
+            border-radius: 9999px;
+            transition: .6s;
+        }
+        
+        label::before {
+            content: "";
+            display: inline-block;
+            border: 1px solid;
+            height: 44px;
+            width: 44px;
+            margin: 3px;
+            border-radius: 9999px;
+            background-color: white;
+            left: 0;
+            transition: .6s;
+        }
+        
+        input:checked+label {
+            border-color: green;
+            box-shadow: inset 0 0 0 26px;
+        }
+        
+        input:checked+label::before {
+            margin-left: 50px;
+        }
+        
+        input {
+            display: none;
         }
     </style>
 </head>
 
-
-
-
 <body>
-    <div></div>
+
+
+    <input type="checkbox" id="a">
+    <!-- 要思考如何让自己的结构更简单  代码更简洁 -->
+    <label for="a"></label>
+    <!-- 这个就是通过点击
+   label来实现checkbox -->
+    <!-- <span></span>可以利用伪元素,根部不需要span -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
-
-
-
 
 </html>
