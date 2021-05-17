@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>table</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        /* 原始table */
+        
+        .table {
+            width: 800px;
+            border-collapse: collapse;
+        }
+        
+        .table th,
+        td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid rgb(55, 59, 62);
+        }
+        
+        .table thead {
+            border-bottom: 3px solid black;
+        }
+        /* 实现striped的效果 */
+        
+        .striped tbody>tr:nth-child(2n + 1) {
+            background-color: rgb(44, 48, 52);
+        }
+        /* 实现.table-hover的效果 */
+        
+        .table-hover tbody>tr:hover:not(thead) {
+            background-color: rgb(242, 242, 242);
+        }
+        /* 实现table-dark */
+        
+        .table-dark {
+            background-color: rgb(33, 37, 41);
+            color: white;
+        }
+        
+        .table-dark th,
+        td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid rgb(55, 59, 62);
+        }
+        
+        .table-dark thead {
+            border-bottom: 3px solid white;
+        }
+        /* 实现table-bordered */
+        
+        .table-bordered table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+        /* 实现table-borderless  */
+        
+        table-borderless td,
+        .table-borderless th {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">东区排名</th>
+                <th scope="col">球队</th>
+                <th scope="col">胜-负</th>
+                <th scope="col">近况</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>76人</td>
+                <td>49-23</td>
+                <td>2连胜</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>篮网</td>
+                <td>48-24</td>
+                <td>5连胜</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>雄鹿</td>
+                <td>46-26</td>
+                <td>1连败</td>
+            </tr>
+
+        </tbody>
+
+
+    </table>
+</body>
+
+</html>
