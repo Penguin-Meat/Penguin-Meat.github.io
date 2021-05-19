@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 5px solid blue;
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        .aa td:hover::before {
+            /* 记得要把里面伪元素隐藏掉 */
+            content: "";
+            border: 5px solid red;
+            /* 要用绝对定位 */
+            position: absolute;
+            right: -5px;
+            top: -5px;
+            bottom: -5px;
+            left: -5px;
+        }
+        
+        .bb td {
+            border: 5px blue ridge;
+        }
+        
+        .bb td:hover {
+            border: 5px solid red;
+        }
+        
+        .cc td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-left: 5px solid blue;
+        }
+        
+        .cc tr {
+            border: 5px solid blue;
+        }
+        
+        .cc td:hover {
+            border: 5px solid red;
+        }
+        
+        .dd tr {
+            border: 5px solid blue;
+        }
+        
+        .dd col {
+            border: 5px solid blue;
+        }
+        
+        .dd td:hover {
+            border: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>table</h2>
+    <table class="table">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <h2>table用绝对定位伪元素,让伪元素的边框覆盖</h2>
+    <table class="aa">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <h2>让单元格样式的优先级更高</h2>
+    <table class="bb">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <h2>避免hover时候出现边框合并原则</h2>
+    <table class="cc">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <h2>让行和列画边框</h2>
+    <table class="dd">
+        <col>
+        <col>
+        <col>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+</body>
+
+</html>
