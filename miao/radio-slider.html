@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+  , initial-scale=1.0">
+    <title>radio-slider</title>
+    <style>
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: 1s;
+            left: 100%;
+        }
+        
+        div {
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        /* 选中第一个input的时候选到第一张图片 */
+        
+        input:nth-child(1):checked~div img:nth-child(1),
+        input:nth-child(2):checked~div img:nth-child(2),
+        input:nth-child(3):checked~div img:nth-child(3) {
+            left: 0;
+            z-index: 8;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+        <input type="radio" name="a" checked>
+        <input type="radio" name="a">
+        <input type="radio" name="a">
+
+        <div>
+            <img id="a" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1020760215,1334881113&fm=26&gp=0.jpg" alt="">
+            <img id="b" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=792404054,1988939179&fm=26&gp=0.jpg" alt="">
+            <img id="c" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=376906409,43823418&fm=26&gp=0.jpg" alt="">
+        </div>
+
+    </section>
+</body>
+
+
+</html>
