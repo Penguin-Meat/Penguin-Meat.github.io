@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: gray;
+        }
+        /* 宽度小于400px时 背景颜色为red */
+        
+        @media screen and (max-width:400px) {
+            body {
+                background: red;
+            }
+        }
+        /* 宽度大于400px小于800px,背景颜色为绿色 */
+        
+        @media screen and (min-width:400px) and (max-width:800px) {
+            body {
+                background: green;
+            }
+        }
+        /* 宽度大于800px小于1200px,背景颜色为绿色 */
+        
+        @media screen and (min-width:800px) and (max-width:1200px) {
+            body {
+                background: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
