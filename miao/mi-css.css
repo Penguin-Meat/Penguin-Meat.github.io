@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    ;
+}
+
+div {
+    display: block;
+}
+
+div.top-header {
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+    color: #B0B0B0;
+}
+
+.text {
+    width: 1224px;
+    margin: auto;
+    font-style: #B0B0B0;
+    /* 用line-height=height来使text这个元素居中与父元素 */
+    height: 40px;
+    line-height: 40px;
+}
+
+.logg-header {
+    height: 100px;
+    width: 1224px;
+}
+
+.limian {
+    width: 1224px;
+    margin: auto;
+    height: 100px;
+    background-color: gray;
+}
+
+div.milogo {
+    height: 100%;
+    width: 100px;
+    margin: auto;
+    display: inline-block;
+    background: indianred;
+    position: relative;
+}
+
+.milogo img {
+    max-height: 60%;
+    float: left;
+    position: absolute;
+    display: block;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.showmain {
+    width: 1224px;
+    margin: auto;
+    display: block;
+    height: 645px;
+    background-color: lightcyan;
+}
+
+.mainone {
+    height: 460px;
+}
+
+.mainone>.leftmenu {
+    background-color: lime;
+    width: 234px;
+    margin-left: 0px;
+    height: 100%;
+}
+
+.mainone>.rightimg {
+    width: calc(100% - 234px);
+    height: 100%;
+    background-color: mediumblue;
+    margin-left: 234px;
+    margin-top: -460px;
+}
