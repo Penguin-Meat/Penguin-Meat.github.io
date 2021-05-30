@@ -1,8 +1,7 @@
 body {
+    background-color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    ;
 }
 
 div {
@@ -12,38 +11,31 @@ div {
 div.top-header {
     width: 100%;
     height: 40px;
-    background-color: #333333;
-    color: #B0B0B0;
+    background-color: rgb(51, 51, 51);
+    color: rgb(176, 176, 176);
 }
 
 .text {
     width: 1224px;
-    margin: auto;
-    font-style: #B0B0B0;
-    /* 用line-height=height来使text这个元素居中与父元素 */
     height: 40px;
     line-height: 40px;
-}
-
-.logg-header {
-    height: 100px;
-    width: 1224px;
+    margin: auto;
 }
 
 .limian {
     width: 1224px;
-    margin: auto;
     height: 100px;
-    background-color: gray;
+    background-color: grey;
+    margin: auto;
 }
 
 div.milogo {
     height: 100%;
     width: 100px;
-    margin: auto;
     display: inline-block;
-    background: indianred;
     position: relative;
+    margin: auto;
+    background: indianred;
 }
 
 .milogo img {
@@ -51,35 +43,61 @@ div.milogo {
     float: left;
     position: absolute;
     display: block;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
     margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
 }
 
 .showmain {
     width: 1224px;
-    margin: auto;
     display: block;
     height: 645px;
     background-color: lightcyan;
+    margin: auto;
 }
 
 .mainone {
     height: 460px;
+    background-color: goldenrod;
 }
 
 .mainone>.leftmenu {
-    background-color: lime;
+    background-color: #333;
     width: 234px;
     margin-left: 0px;
     height: 100%;
+    opacity: 0.5;
 }
 
-.mainone>.rightimg {
-    width: calc(100% - 234px);
+
+/* .mainone>.rightimg {
+  width: calc(100% - 234px);
+  height: 100%;
+  background-color: mediumblue;
+  margin-left: 234px;
+  margin-top: -460px;
+} */
+
+.leftmenu>.ulone {
+    box-sizing: border-box;
+    width: 100%;
     height: 100%;
-    background-color: mediumblue;
-    margin-left: 234px;
-    margin-top: -460px;
+    border: 1px solid red;
+    list-style: none;
+    xpadding-top: 20px;
+    xpadding-bottom: 20px;
+    /* margin-left: -42px; */
+}
+
+.ulone>li {
+    border: 1px solid black;
+    width: 234px;
+    height: 42px;
+    /* 用flex来实现文字垂直居中 */
+    /* text-align: center; */
+}
+
+li:hover {
+    background-color: coral;
 }
