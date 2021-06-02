@@ -12,7 +12,6 @@ div.top-header {
     width: 100%;
     height: 40px;
     background-color: rgb(51, 51, 51);
-    color: rgb(176, 176, 176);
 }
 
 .text {
@@ -22,25 +21,38 @@ div.top-header {
     margin: auto;
 }
 
+.text a {
+    padding: 0 2px 0 10px;
+    border-left: 1px solid #404040;
+    color: #a5a5a3;
+    font-size: 13px;
+    text-decoration: none
+}
+
+.text a:first-child {
+    border-left: none;
+}
+
+.text a:hover {
+    color: white;
+}
+
 .limian {
     width: 1224px;
     height: 100px;
-    background-color: grey;
     margin: auto;
 }
 
 div.milogo {
     height: 100%;
-    width: 100px;
+    width: 234px;
     display: inline-block;
     position: relative;
     margin: auto;
-    background: indianred;
 }
 
 .milogo img {
     max-height: 60%;
-    float: left;
     position: absolute;
     display: block;
     top: 0px;
@@ -49,25 +61,154 @@ div.milogo {
     margin: auto;
 }
 
+
+/* hover小米logo logo变小 */
+
+.logo-img:active {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.daohang {
+    height: 100%;
+    width: 990px;
+    margin-left: 234px;
+    margin-top: -105px;
+}
+
+.daohang>ul {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.daohang>ul>li {
+    display: inline-block;
+}
+
+
+/* 搜索框的参数 */
+
+.k {
+    margin-right: ;
+    height: 50px;
+    width: 240px;
+    border: 1px solid #e0e0ee;
+    position: relative
+}
+
+.n {
+    float: right;
+    width: 52px;
+    height: 52px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+}
+
+
+/* hover的时候交互 */
+
+.n:hover {
+    background-color: #ea721a;
+    border-color: #ea721a;
+}
+
+.daohang>ul>li:hover {
+    cursor: pointer;
+    color: coral;
+}
+
+
+/* input:focus {
+    outline-color: #ea721a;
+} */
+
+
+/* daohang里面的ul的li的ul */
+
+
+/* 相对于logoheader定位解决宽度以及left问题 */
+
+div.logo-header {
+    position: relative;
+}
+
+.daohang>ul>li>ul {
+    top: 100px;
+    left: 0;
+    position: absolute;
+    height: 0;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+    xdisplay: none;
+    z-index: 60;
+    border-top: 1px solid transparent;
+}
+
+
+/* 一开始遇到一个问题 当ul被hover出来的时候会先从黑色渐变成自己想要的颜色 第一个是因为我上面ul的样式没有设置border的颜色 当他被hover出来的时候会先产生边框而且边框颜色是字体黑色 进行一个从无到有的过程 然后渐变到我想要的颜色 
+解决办法思路是 先给需要被hover出来的ul加border 然后颜色是透明 这就解决了默认被hover出来重新加边框 然后再设置自己需要的颜色  */
+
+.daohang>ul>li:hover {
+    z-index: 9999;
+}
+
+.daohang>ul>li:hover ul {
+    display: inline-block;
+    background-color: #fff;
+    /* 下面是单边阴影 */
+    box-shadow: 0 12px 8px -12px rgba(0, 0, 0, 0.19);
+    border-color: #d3d3d3;
+    height: 228px;
+    transition: .4s;
+}
+
+.daohang>ul>li>ul>li>.splogo>img {
+    width: 160px;
+    height: 110px;
+}
+
+.daohang>ul>li>ul>li {
+    display: inline-block;
+}
+
+
+/* input {
+    outline-color: #ea721a;
+} */
+
 .showmain {
     width: 1224px;
     display: block;
     height: 645px;
-    background-color: lightcyan;
     margin: auto;
 }
 
 .mainone {
     height: 460px;
-    background-color: goldenrod;
+    background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e023dd94c146d0f27f7ae8e98213abff.jpg?thumb=1&w=2452&h=920&f=webp&q=90);
+    background-size: 100%;
+}
+
+.mainone img {
+    max-width: 1226px;
+    max-height: 100%;
 }
 
 .mainone>.leftmenu {
-    background-color: #333;
     width: 234px;
     margin-left: 0px;
     height: 100%;
-    opacity: 0.5;
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -79,25 +220,133 @@ div.milogo {
   margin-top: -460px;
 } */
 
-.leftmenu>.ulone {
+.leftmenu {
     box-sizing: border-box;
+    background-color: #a5a5a3;
+    padding-top: 30px;
+    position: relative;
+    opacity: 1;
+}
+
+.leftmenu>section {
+    height: 40px;
     width: 100%;
+    line-height: 40px;
+    color: #fff;
+    text-indent: 2em;
+    font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    display: flex;
+    /*实现文字垂直居中*/
+    align-items: center;
+}
+
+section:hover {
+    background-color: #ea721a;
+    cursor: pointer;
+}
+
+.leftmenu>section:hover ul {
+    display: block;
+}
+
+section .secion-ul-a {
+    position: absolute;
+    width: 992px;
     height: 100%;
-    border: 1px solid red;
+    background-color: #fff;
+    margin-left: 234px;
     list-style: none;
-    xpadding-top: 20px;
-    xpadding-bottom: 20px;
-    /* margin-left: -42px; */
+    top: 0px;
+    display: none;
+    /* 卡片阴影效果 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.ulone>li {
+section .secion-ul-b {
+    position: absolute;
+    width: 795px;
+    height: 100%;
+    background-color: #fff;
+    margin-left: 234px;
+    list-style: none;
+    top: 0px;
+    display: none;
+    /* 卡片阴影效果 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+section .secion-ul-c {
+    position: absolute;
+    width: 530px;
+    height: 100%;
+    background-color: #fff;
+    margin-left: 234px;
+    list-style: none;
+    top: 0px;
+    display: none;
+    /* 卡片阴影效果 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* .ulone>li {
     border: 1px solid black;
-    width: 234px;
-    height: 42px;
-    /* 用flex来实现文字垂直居中 */
-    /* text-align: center; */
+    width: 100%;
+    height: 42px; */
+
+
+/* 用flex来实现文字垂直居中
+
+
+/* 有问题的地方在于hover出的颜色不能改变 但是整个ul背景要透出mainone的图片颜色 */
+
+.maintwo {
+    height: 186px;
+    width: 100%;
+    margin-top: 14px;
 }
 
-li:hover {
-    background-color: coral;
+.row-a {
+    float: left;
+    width: 234px;
+    height: 100%;
+    background-color: #5d5751;
+}
+
+.row-b {
+    float: left;
+    background-color: #fff;
+    height: 100%;
+    width: calc(100% - 248px);
+    margin-left: 14px;
+}
+
+.row-b>ul {
+    list-style: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.row-b>ul>li {
+    float: left;
+    width: 316px;
+    height: 186px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 14px;
+}
+
+ul>li.row-b-f {
+    margin-left: 0;
+}
+
+.row-b>ul>li>img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.row-b li:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
 }
