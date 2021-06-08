@@ -20,9 +20,8 @@
 
 <script id="ch0103/04" type="xxx">
     var a = Number(prompt("输入a")) 
-    var b = Number(prompt("输入b")) 
-    var c = Math.ceil(a / b)
-    console.log(c) 
+    var b = Number(prompt("输入b"))    
+    console.log(parseInt(a / b)) 
     console.log(a % b)
 
 </script>
@@ -82,12 +81,12 @@
 <script id="ch0103/11" type="xxx">
     var a = Number(prompt("输入")) 
     var b = Number(prompt("输入")) 
-    console.log( a % b )
+    console.log( (a % b).toFixed(4) )
 </script>
 
 <script id="ch0103/12" type="xxx">
     var r = Number(prompt("输入")) 
-    var V = 4 / 3 * 3.14 * r * r * r * r 
+    var V = 4 / 3 * (3.14 * r * r * r * r )
     console.log(V.toFixed(2))
 </script>
 
@@ -102,15 +101,15 @@
 <script id="ch0103/14" type="xxx">
     var r = Number(prompt("输入")) 
     var h = Number(prompt("输入")) 
-    var a =  20 / ((3.14159 * r * r * h ) / 1000)
-    console.log(a)
+    var a =  20000 / (3.14159 * r * r * h ) 
+    console.log(Math.ceil(a))
 </script>
 
 <script id="ch0103/15" type="xxx">
     var n = Number(prompt("输入")) 
     var x = Number(prompt("输入")) 
     var y = Number(prompt("输入")) 
-    console.log(n - x * y )
+    console.log(parseInt(n - x * y ))
 </script>
 
 <script id="ch0103/16" type="xxx">
