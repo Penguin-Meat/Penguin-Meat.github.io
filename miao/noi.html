@@ -8,18 +8,20 @@
     var a = Number(prompt("输入a:")) 
     var b = Number(prompt("输入b:")) 
     var c = +(prompt("输入c:")) 
-    console.log( (a + b)*c ) </script>
+    console.log( (a + b)*c ) 
+</script>
 
 <script id="ch0103/03" type="xxx">
     var a = Number(prompt("输入a:")) 
     var b = Number(prompt("输入b")) 
     var c = +(prompt("输入c")) 
-    console.log( (a + b)/c )</script>
+    console.log( (a + b)/c )
+</script>
 
 <script id="ch0103/04" type="xxx">
     var a = Number(prompt("输入a")) 
     var b = Number(prompt("输入b")) 
-    if (a != 0) console.log(a/b) 
+    console.log(a/b) 
     console/log(a%b)
 
 </script>
@@ -53,7 +55,7 @@
 
 <script id="ch0103/08" type="xxx">
     var F = Number(prompt("输入")) 
-    var C = 5 * (F-32) / 9 
+    var C = 5 * (F - 32) / 9 
     console.log(C.toFixed(5))
  </script>
 
@@ -68,17 +70,17 @@
     
 </script>
 
-<script id="ch0103/9" type="xxx">
+<script id="ch0103/10" type="xxx">
     var r1 = Number(prompt("输入")) 
     var r2 = Number(prompt("输入")) 
     var R = R = 1/(1/r1 + 1/r2) 
-    console.log(R.toFixed(2))
+    console.log( R.toFixed(2) )
 </script>
 
 <script id="ch0103/11" type="xxx">
     var a = Number(prompt("输入")) 
     var b = Number(prompt("输入")) 
-    console.log(a%b)
+    console.log( a % b )
 </script>
 
 <script id="ch0103/12" type="xxx">
@@ -105,6 +107,48 @@
 <script id="ch0103/15" type="xxx">
     var n = Number(prompt("输入")) 
     var x = Number(prompt("输入")) 
-    var y = Number(prompt("输入")) c
-    onsole.log(n - x * y )
+    var y = Number(prompt("输入")) 
+    console.log(n - x * y )
+</script>
+
+<script id="ch0103/16" type="xxx">
+    var xa = Number(prompt("输入xa")) 
+    var ya = Number(prompt("输入ya")) 
+    var xb = Number(prompt("输入xb")) 
+    var yb = Number(prompt("输入yb"))
+    var f = Math.sqrt((xa-xb)*(xa-xb)+(ya-yb)*(ya-yb))
+    console.log(f.toFixed(3))
+</script>
+
+
+<script id="ch0103/17" type="xxx">
+    var x1 = Number(prompt("输入x1")) 
+    var y1 = Number(prompt("输入y1")) 
+    var x2 = Number(prompt("输入x2")) 
+    var y2 = Number(prompt("输入y2")) 
+    var x3 = Number(prompt("输入x3"))
+    var y3 = Number(prompt("输入y3"))
+    
+    console.log((x1y2-x1y3+x2y3-x2y1+x3y1-x2y2).toFixed(2))
+</script>
+
+
+<script id="ch0103/18" type="xxx">
+    var a1 = Number(prompt("输入a1")) 
+    var a2 = Number(prompt("输入a2")) 
+    var n = Number(prompt("输入n"))
+    console.log((n-1) * a2)
+</script>
+
+<script id="ch0103/19" type="xxx">
+    var A = Number(prompt("输入A")) 
+    var B = Number(prompt("输入B")) 
+    var n = (A * B)
+    console.log(n)
+</script>
+
+<script id="ch0103/20" type="xxx">
+    var n = Number(prompt("输入n")) 
+    
+    console.log(2 ** n)
 </script>
