@@ -12,17 +12,17 @@
 </script>
 
 <script id="ch0103/03" type="xxx">
-    var a = Number(prompt("输入a:")) 
+    var a = Number(prompt("输入a")) 
     var b = Number(prompt("输入b")) 
-    var c = +(prompt("输入c")) 
-    console.log( (a + b)/c )
+    var c = Number(prompt("输入c")) 
+    console.log( (a + b) / c )
 </script>
 
 <script id="ch0103/04" type="xxx">
     var a = Number(prompt("输入a")) 
     var b = Number(prompt("输入b")) 
-    console.log(a/b) 
-    console/log(a%b)
+    console.log(a / b) 
+    console.log(a % b)
 
 </script>
 
@@ -37,7 +37,7 @@
 <script id="ch0103/06" type="xxx">
     var a = Number(prompt("确诊数")) 
     var b = Number(prompt("死亡数")) 
-    var c = (b/a) 
+    var c = (b / a) 
     console.log(c.toFixed(9)+ "%")
 
 </script>
@@ -48,7 +48,7 @@
     var c = Number(prompt("输入c")) 
     var d = Number(prompt("输入d")) 
     var x = Number(prompt("输入x")) 
-    var f= (a * x * x * x )+ (b * x * x) + (c * x )+ d 
+    var f= a * x * x * x + b * x * x + c * x + d 
     console.log(f.toFixed(7))
 
 </script>
@@ -85,7 +85,7 @@
 
 <script id="ch0103/12" type="xxx">
     var r = Number(prompt("输入")) 
-    var V = 4/3 * 3.14 * r * r * r * r 
+    var V = 4 / 3 * 3.14 * r * r * r * r 
     console.log(V.toFixed(2))
 </script>
 
@@ -137,7 +137,8 @@
     var a1 = Number(prompt("输入a1")) 
     var a2 = Number(prompt("输入a2")) 
     var n = Number(prompt("输入n"))
-    console.log((n-1) * a2)
+    var d = a2 - a1 
+    console.log(a1 + (n-1) *  d)
 </script>
 
 <script id="ch0103/19" type="xxx">
