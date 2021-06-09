@@ -268,9 +268,52 @@
 <script id="ch0104/14" type="xxx">
     var x = +(prompt("输入重量")) 
     var a = (prompt("输入是否加急")) 
-    
-    console.log( x < 60 || y < 60 ? 1 : 0)
+    var price = 8
+    if (x > 1000) price += Math.ceil((x - 1000) / 500 * 4 )
+    if (a === "y")  price += 5
+    console.log(price)
 </script>
 
 
+<script id="ch0104/15" type="xxx">
+    var a = +(prompt("输入a")) 
+    var b = +(prompt("输入b"))
+    var c = +(prompt("输入c"))
+    <!-- if ( a > b && b < c)
+    console.log(a)
+    else if ( a > b && a < c)
+    console.log(b)
+    else
+    console.log(c) -->
+    console.log(Math.max(a,b,c))
+</script>
+
+<script id="ch0104/16" type="xxx">
+    var a = +(prompt("输入a")) 
+    var b = +(prompt("输入b"))
+    var c = +(prompt("输入c"))
+    console.log( a + b > c && a + c > b && b + c > a ? "yes":"no")
+</script>
+
+<script id="ch0104/17" type="xxx">
+    var x = +(prompt("输入x")) 
+    
+    console.log(x % 400 == 0 || x % 4 == 0 && x % 100 != 0 ? "Y": "N")
+</script>
+
+<script id="ch0104/18" type="xxx">
+    var x = +(prompt("输入x")) 
+    var y = +(prompt("输入y"))
+    console.log( -1 <= x <= 1 && -1 <= y <= 1 ? "yes": "no")
+</script>
+
+<script id="ch0104/19" type="xxx">
+    var a = +(prompt("输入a")) 
+    var b = +(prompt("输入b"))
+    var c = (prompt("输入c"))
+    if(c === "+") console.log(a + b)
+    if(c === "-") console.log(a - b)
+    if(c === "*") console.log(a * b)
+    if(c === "/") console.log(a / b)
+</script>
 
