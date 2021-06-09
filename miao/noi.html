@@ -89,9 +89,9 @@
 </script>
 
 <script id="ch0103/12" type="xxx">
-    var Pi = 3.14
+    var P = 3.14
     var r = Number(prompt("输入")) 
-    console.log((4 / 3 * (Pi * r * r * r  ).toFixed(2))
+    console.log((4 / 3 * (P * r * r * r ).toFixed(2))
 </script>
 
 <script id="ch0103/13" type="xxx">
@@ -109,7 +109,7 @@
     var r = Number(prompt("输入")) 
     var h = Number(prompt("输入")) 
     var Pi = 3.14159
-    var a =  20000 / (Pi * r * r * h) 
+    var a = (20000 / (Pi * r * r * h))
     console.log(Math.ceil(a))
 </script>
 
@@ -117,7 +117,7 @@
     var n = Number(prompt("输入")) 
     var x = Number(prompt("输入")) 
     var y = Number(prompt("输入")) 
-    console.log(n - parseInt(x * y))
+    console.log(n - Math.ceil( y / x ))
 </script>
 
 <script id="ch0103/16" type="xxx">
@@ -137,8 +137,9 @@
     var y2 = Number(prompt("输入y2")) 
     var x3 = Number(prompt("输入x3"))
     var y3 = Number(prompt("输入y3"))
-    
-    console.log((x1 * y2 - x1 * y3 + x2 * y3 - x2 * y1 + x3 * y1 - x2 * y2).toFixed(2))
+    var a = Math.sqrt((x2 - x3) * (x2 - x3) - (y2 - y3) * (y2 - y3))
+    var v = ((y2 - y3)* x + (x2 - x3) * y + y3(x2 - x3) - x3(y2 - y3)) / a 
+    console.log((1 / 2 * a * v ).toFixed(2))  
 </script>
 
 
@@ -190,11 +191,11 @@
 </script>
 
 <script id="ch0104/04" type="xxx">
-    var A = (prompt("输入n")) 
-    var B = A.charCodeAt()
-    if ( B % 2 === 1 ) 
+    var a = (prompt("输入n")) 
+    var b = a.charCodeAt()
+    if (b % 2 == 1) 
     console.log( "yes")
-    else 
+    else (b % 2 != 1)
     console.log("no")
     
 </script>
@@ -202,13 +203,9 @@
 <script id="ch0104/05" type="xxx">
     var x = parseInt(prompt("输入x")) 
     var y = parseInt(prompt("输入y"))
-    var x = ""
-    if ( x > y ) 
-     console (x = " > " )
-    else if( x === y )
-     console(x = " = ")
-    else if (x < y )
-     console.log(x = " < ")
+    if ( x > y ) console ( " > " )
+    if( x === y ) console(" = ")
+    if (x < y ) console.log( " < ")
     
 </script>
 
@@ -316,3 +313,12 @@
     if(c === "/") console.log(a / b)
 </script>
 
+<script id="ch0105/01" type="xxx">
+    var a = +(prompt("学生人数")) 
+    var b = +(prompt("输入b"))
+    var c = (prompt("输入c"))
+    if(c === "+") console.log(a + b)
+    if(c === "-") console.log(a - b)
+    if(c === "*") console.log(a * b)
+    if(c === "/") console.log(a / b)
+</script>
