@@ -8,7 +8,7 @@
     var a = Number(prompt("输入a:")) 
     var b = Number(prompt("输入b:")) 
     var c = +(prompt("输入c:")) 
-    console.log( (a + b)*c ) 
+    console.log((a + b)*c) 
 </script>
 
 <script id="ch0103/03" type="xxx">
@@ -16,6 +16,7 @@
     var b = Number(prompt("输入b")) 
     var c = Number(prompt("输入c")) 
     console.log(Math.floor((a + b) / c ))
+    <!-- 用 Math.round 更满足条件 -->
 </script>
 
 <script id="ch0103/04" type="xxx">
@@ -23,7 +24,10 @@
     var b = Number(prompt("输入b"))    
     console.log(parseInt(a / b)) 
     console.log(a % b)
-
+    <!-- 还有一种做法 
+    var c = (a % c)
+    console.log(( a - c ) / b)
+    comsole.log(c) -->
 </script>
 
 <script id="ch0103/05" type="xxx">
@@ -93,9 +97,12 @@
 <script id="ch0103/13" type="xxx">
     var n = Number(prompt("输入")) 
     var a = n % 10 * 100 
-    var b = n % 100 - n % 10 
+    var b = n % 100 / 10
     var c = (n - n % 100) / 100 
-    console.log(a+b+c)
+    var d = String(n % 10 * 100 ) + String(n % 100 / 10 ) + String((n - n % 100) / 100 )
+    console.log(d)
+
+    <!-- 最后的是字符串相接  -->
 </script>
 
 <script id="ch0103/14" type="xxx">
@@ -109,7 +116,7 @@
     var n = Number(prompt("输入")) 
     var x = Number(prompt("输入")) 
     var y = Number(prompt("输入")) 
-    console.log(parseInt(n - x * y ))
+    console.log(n - parseInt(x * y))
 </script>
 
 <script id="ch0103/16" type="xxx">
@@ -183,7 +190,7 @@
 <script id="ch0104/04" type="xxx">
     var A = (prompt("输入n")) 
     var B = A.charCodeAt()
-    if ( b % 2 === 1 ) 
+    if ( B % 2 === 1 ) 
     console.log( "yes")
     else 
     console.log("no")
