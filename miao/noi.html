@@ -108,7 +108,8 @@
 <script id="ch0103/14" type="xxx">
     var r = Number(prompt("输入")) 
     var h = Number(prompt("输入")) 
-    var a =  20000 / (3.14159 * r * r * h ) 
+    var Pi = 3.14159
+    var a =  20000 / (Pi * r * r * h) 
     console.log(Math.ceil(a))
 </script>
 
@@ -224,18 +225,21 @@
 </script>
 
 <script id="ch0104/08" type="xxx">
-    var x = +(prompt("输入n")) 
-    
+    var n = +(prompt("输入n")) 
     
     console.log( n % 3 === 0 && n % 5 === 0 ? "YES" : "NO")
 </script>
 
 <script id="ch0104/09" type="xxx">
-    var x = +(prompt("输入n")) 
-    if (x % 3) === 0 console.log("3")
-    if (x % 5) === 0 console.log("5") 
-    if (x % 7) === 0 console.log("7")
-    if ( x % 3 === 0 && x % 5 === 0 && x % 7 === 0 ) console.log("n")
+    var x = +(prompt("输入x")) 
+    if ( x % 3 === 0 && x % 5 === 0 && x % 7 === 0 ) {console.log( "3" + "" + "5" + "" + "7" )}
+    if (x % 3 === 0 && x % 5 === 0) {console.log("3" + "" + "5")}
+    if (x % 3 === 0 && x % 7 === 0) {console.log("3" + "" + "7")} 
+    if (x % 5 === 0 && x % 7 === 0) {console.log("5" + "" + "7")}
+    if ( x % 3 !== 0 && x % 5 === 0 && x % 7 === 0 ) {console.log("3")}
+    if ( x % 3 === 0 && x % 5 !== 0 && x % 7 === 0 ) {console.log("5")}
+    if ( x % 3 === 0 && x % 5 === 0 && x % 7 !== 0 ) {console.log("7")}
+    if ( x % 3 !== 0 && x % 5 !== 0 && x % 7 !== 0 ) {console.log("n")}
 
 
 </script>
@@ -285,7 +289,7 @@
     console.log(b)
     else
     console.log(c) -->
-    console.log(Math.max(a,b,c))
+    console.log(Math.max(a, b, c))
 </script>
 
 <script id="ch0104/16" type="xxx">
