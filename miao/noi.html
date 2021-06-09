@@ -167,9 +167,10 @@
     var N = Number(prompt("输入N")) 
     if (N > 0 )
     console.log("positive")
-    else if (N = 0)
+    else if (N == 0)
     console.log("zero")
-    else console.log("negative")
+    else if (N < 0 ) 
+    console.log("negative")
 
 </script>
 
@@ -203,11 +204,11 @@
     var y = parseInt(prompt("输入y"))
     var x = ""
     if ( x > y ) 
-     x = " > " 
+     console (x = " > " )
     else if( x === y )
-     x = " = "
-    else 
-     x = " < "
+     console(x = " = ")
+    else if (x < y )
+     console.log(x = " < ")
     
 </script>
 
@@ -227,19 +228,18 @@
 <script id="ch0104/08" type="xxx">
     var n = +(prompt("输入n")) 
     
-    console.log( n % 3 === 0 && n % 5 === 0 ? "YES" : "NO")
+    if ( n % 3 === 0 && n % 5 === 0 )
+    console.log("YES") 
+    else ("NO")
 </script>
 
 <script id="ch0104/09" type="xxx">
     var x = +(prompt("输入x")) 
-    if ( x % 3 === 0 && x % 5 === 0 && x % 7 === 0 ) {console.log( "3" + "" + "5" + "" + "7" )}
-    if (x % 3 === 0 && x % 5 === 0) {console.log("3" + "" + "5")}
-    if (x % 3 === 0 && x % 7 === 0) {console.log("3" + "" + "7")} 
-    if (x % 5 === 0 && x % 7 === 0) {console.log("5" + "" + "7")}
-    if ( x % 3 !== 0 && x % 5 === 0 && x % 7 === 0 ) {console.log("3")}
-    if ( x % 3 === 0 && x % 5 !== 0 && x % 7 === 0 ) {console.log("5")}
-    if ( x % 3 === 0 && x % 5 === 0 && x % 7 !== 0 ) {console.log("7")}
-    if ( x % 3 !== 0 && x % 5 !== 0 && x % 7 !== 0 ) {console.log("n")}
+    
+    if (x % 3 === 0) console.log(3)
+    if (x % 5 === 0) console.log(5) 
+    if (x % 7 === 0) console.log(7)
+    if ( x % 3 !== 0 && x % 5 !== 0 && x % 7 !== 0 ) console.log("n")
 
 
 </script>
