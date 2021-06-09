@@ -1,7 +1,11 @@
 <script>
- var r = Number(prompt("输入")) 
-    var V = 4 / 3 * (Pi * r * r * r * r )
-    var Pi = 3.14
-    console.log(V.toFixed(2))
-
+ var x1 = Number(prompt("输入x1")) 
+    var y1 = Number(prompt("输入y1")) 
+    var x2 = Number(prompt("输入x2")) 
+    var y2 = Number(prompt("输入y2")) 
+    var x3 = Number(prompt("输入x3"))
+    var y3 = Number(prompt("输入y3"))
+    var a = Math.sqrt((x2 - x3) * (x2 - x3) - (y2 - y3) * (y2 - y3))
+    var v = (((y2 - y3)* x1 + (x2 - x3) * y1 + y3 * (x2 - x3) - x3 * (y2 - y3)) / a) 
+    console.log((1 / 2 * a * v ).toFixed(2))  
 </script>
