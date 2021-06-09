@@ -273,7 +273,7 @@
     var x = +(prompt("输入重量")) 
     var a = (prompt("输入是否加急")) 
     var price = 8
-    if (x > 1000) price += Math.ceil((x - 1000) / 500 * 4 )
+    if (x > 1000) price += (Math.ceil((x - 1000) / 500)) * 4 
     if (a === "y")  price += 5
     console.log(price)
 </script>
@@ -283,12 +283,7 @@
     var a = +(prompt("输入a")) 
     var b = +(prompt("输入b"))
     var c = +(prompt("输入c"))
-    <!-- if ( a > b && b < c)
-    console.log(a)
-    else if ( a > b && a < c)
-    console.log(b)
-    else
-    console.log(c) -->
+    
     console.log(Math.max(a, b, c))
 </script>
 
