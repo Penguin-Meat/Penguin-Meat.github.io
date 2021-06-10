@@ -1,12 +1,15 @@
 <script id="ch0105/01">
-    var a = +prompt()
+
+var a = +prompt()
     var max = 0
+    var min = null 
     var b 
     for( var i = 0; i < a ; i ++ ){
         b = +prompt()
         if(max < b)
          max = b
+        if(min > b)
+         min = b 
     }
-    console.log(max)
-    
+    console.log(max - min)
 </script>

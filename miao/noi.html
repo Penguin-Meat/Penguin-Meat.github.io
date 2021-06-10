@@ -88,7 +88,7 @@
 <script id="ch0103/12" type="xxx">
     var P = 3.14
     var r = Number(prompt("输入")) 
-    console.log((4 / 3 * (P * r * r * r ).toFixed(2))
+    console.log((4 / 3 * (P * r * r * r )).toFixed(2))
 </script>
 
 <script id="ch0103/13" type="xxx">
@@ -359,11 +359,33 @@
 </script>
 
 <script id="ch0105/06">
-
+    var a = +prompt()
+    var max = 0
+    var min = null 
+    var b 
+    for( var i = 0; i < a ; i ++ ){
+        b = +prompt()
+        if(max < b)
+         max = b
+        else if(min > b)
+         min = b 
+    }
+    console.log(max - min)
 </script>
 
 <script id="ch0105/07">
-
+var a = +prompt()
+    var b = 0
+    var c = 0 
+    var d = 0
+    
+    for( var i = 0; i < a ; i ++ ){
+        b += +prompt()
+        c += +prompt()
+        d += +prompt()
+        
+    }
+    console.log(b, c, d, (b + c + d))
 </script>
 
 <script id="ch0105/08">
