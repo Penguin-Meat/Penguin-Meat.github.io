@@ -1,11 +1,13 @@
 <script id="ch0105/01">
-    var x = +prompt("人口基数")
-    var n = +prompt("年数")
-    var result = x 
-    
-    for( var i = 0 ; i < n ; i++ ){
-        result = result * 1.0001
+    var R = +prompt()
+    var M = +prompt()
+    var Y = +prompt()  
+    var result = M   
+
+    for( var i = 0 ; i < Y ; i++ ){
+        result = result * 1.05
     }
-    console.log(result.toFixed(4))
+
+    console.log(parseInt(result))
 
 </script>

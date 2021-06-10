@@ -360,8 +360,8 @@
 
 <script id="ch0105/06">
     var a = +prompt()
-    var max = Infinity
-    var min = - Infinity
+    var max = 0 
+    var min = null
     var b 
     for( var i = 0; i < a ; i ++ ){
         b = +prompt()
@@ -459,13 +459,22 @@ var a = +prompt()
     var result = x 
     
     for( var i = 0 ; i < n ; i++ ){
-        result = result * 1.0001
+        result = result * 1.001
     }
     console.log(result.toFixed(4))
 </script>
 
 <script id="ch0105/15">
+    var R = +prompt()
+    var M = +prompt()
+    var Y = +prompt()  
+    var result = M   
 
+    for( var i = 0 ; i < Y ; i++ ){
+        result = result * 1.05
+    }
+
+    console.log(parseInt(result))
 </script>
 
 <script id="ch0105/16">
