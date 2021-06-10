@@ -1,15 +1,11 @@
 <script id="ch0105/01">
-
-var a = +prompt()
-    var max = 0
-    var min = null 
-    var b 
-    for( var i = 0; i < a ; i ++ ){
-        b = +prompt()
-        if(max < b)
-         max = b
-        if(min > b)
-         min = b 
+    var x = +prompt("人口基数")
+    var n = +prompt("年数")
+    var result = x 
+    
+    for( var i = 0 ; i < n ; i++ ){
+        result = result * 1.0001
     }
-    console.log(max - min)
+    console.log(result.toFixed(4))
+
 </script>

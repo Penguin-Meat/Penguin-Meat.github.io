@@ -360,15 +360,15 @@
 
 <script id="ch0105/06">
     var a = +prompt()
-    var max = 0
-    var min = null 
+    var max = Infinity
+    var min = - Infinity
     var b 
     for( var i = 0; i < a ; i ++ ){
         b = +prompt()
-        if(max < b)
-         max = b
-        else if(min > b)
-         min = b 
+        if(max < b)//如果当前输入的数比最大值还要大
+         max = b//它称为最大数
+        if(min > b)//如果当前输入的数比最小值还要小
+         min = b//它成为最小数
     }
     console.log(max - min)
 </script>
@@ -389,15 +389,41 @@ var a = +prompt()
 </script>
 
 <script id="ch0105/08">
-
+    var n = +prompt()
+    var sum = 0 
+    var m = (n - 2) * 180 
+    for( var i = 1; i < n ; i++ ){
+        sum += +prompt()
+    }
+    console.log(m - sum) 
 </script>
 
 <script id="ch0105/09">
-
+    var m = +prompt()
+    var n = +prompt()
+    var oddsum = 0 
+    
+    for( var i = m ; i <= n ; i++ ){
+        
+        if ( i % 2 == 1 )
+            oddsum += i
+        
+    }
+    console.log(oddsum) 
 </script>
 
 <script id="ch0105/10">
-
+    var m = +prompt()
+    var n = +prompt()
+    var sum = 0 
+    
+    for( var i = m ; i <= n ; i++ ){
+        
+        if ( i % 17 == 0 )
+            sum += i
+        
+    }
+    console.log(sum) 
 </script>
 
 <script id="ch0105/11">
@@ -405,15 +431,37 @@ var a = +prompt()
 </script>
 
 <script id="ch0105/12">
-
+    var N = +prompt()
+    var count = 0 
+    
+    for( var i = 0 ; i < N ; i++ ){
+        m = +prompt()
+        if ( m == N )
+        count += 1
+        
+    }
+    console.log(count) 
 </script>
 
 <script id="ch0105/13">
-
+    var a = +prompt()
+    var n = +prompt()
+    var result = 1 
+    for( var i = 0 ; i < n ; i++) {
+        result *= a 
+    }
+    console.log(result) 
 </script>
 
 <script id="ch0105/14">
-
+    var x = +prompt("人口基数")
+    var n = +prompt("年数")
+    var result = x 
+    
+    for( var i = 0 ; i < n ; i++ ){
+        result = result * 1.0001
+    }
+    console.log(result.toFixed(4))
 </script>
 
 <script id="ch0105/15">
