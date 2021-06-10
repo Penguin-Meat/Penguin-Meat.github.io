@@ -478,7 +478,20 @@ var a = +prompt()
 </script>
 
 <script id="ch0105/16">
-
+    var N = +prompt()
+    var k = +prompt()
+    var Y = 200  
+    var a = N 
+    
+    for( var i = 1 ; i <= 20 ; i++ ){
+        if( a >= Y ){
+        break 
+        }
+        a += N  
+        Y *= 1 + k / 100 
+        
+    }
+    console.log(i)
 </script>
 
 <script id="ch0105/17">

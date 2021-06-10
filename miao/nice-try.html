@@ -1,13 +1,17 @@
 <script id="ch0105/01">
-    var R = +prompt()
-    var M = +prompt()
-    var Y = +prompt()  
-    var result = M   
-
-    for( var i = 0 ; i < Y ; i++ ){
-        result = result * 1.05
+    var N = +prompt()
+    var k = +prompt()
+    var Y = 200  
+    var a = N 
+    
+    for( var i = 1 ; i <= 20 ; i++ ){
+        if( a >= Y ){
+        break 
+        }
+        a += N  
+        Y *= 1 + k / 100 
+        
     }
-
-    console.log(parseInt(result))
+    console.log(i)
 
 </script>
