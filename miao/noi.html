@@ -427,7 +427,22 @@ var a = +prompt()
 </script>
 
 <script id="ch0105/11">
-
+    var k = prompt()
+    var x = 0 
+    var y = 0
+    var z = 0 
+    for (i = 0;i < k ;i++ ){
+        var b = prompt()
+        if (b == 1 )
+        x += 1
+        if ( b == 5 )
+        y += 1
+        if( b == 10 )
+        z += 1 
+    }
+    console.log(x)
+    console.log(y)
+    console.log(z)
 </script>
 
 <script id="ch0105/12">
@@ -503,7 +518,19 @@ var a = +prompt()
 </script>
 
 <script id="ch0105/19">
-
+var n = prompt()
+    var speed = 50 
+    var totaltime = 0 
+    for (var i = 0; i < n; i++ ){
+    var x = prompt()
+    var y = prompt()
+    var r = prompt()
+    
+    var d = Math.sqrt(x * x + y * y)
+    var time = Math.ceil(d * 2 / speed + r * 1.5)
+    totaltime += time 
+} 
+    console.log(totaltime);
 </script>
 
 <script id="ch0105/20">
