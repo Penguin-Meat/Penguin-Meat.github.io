@@ -451,10 +451,9 @@ var a = +prompt()
     var count = 0 
     
     for( var i = 0 ; i < N ; i++ ){
-        m = +prompt()
-        if ( m == N )
+        M = +prompt()
+        if ( M == m )
         count += 1
-        
     }
     console.log(count) 
 </script>
@@ -462,7 +461,7 @@ var a = +prompt()
 <script id="ch0105/13">
     var a = +prompt()
     var n = +prompt()
-    var result = 1 
+    var result = 1 // 乘法从1开始 不能从0开始 
     for( var i = 0 ; i < n ; i++) {
         result *= a 
     }
@@ -551,6 +550,18 @@ var n = prompt()
 </script>
 
 <script id="ch0105/24">
+var n = +prompt()
+var ssy = 0 
+var szy = 0
+var count = 0 
+for( i = 0;i < n ; i++ ){
+    ssy = prompt()
+    szy = prompt()
+    if( 90 < ssy &&  ssy < 140 && szy >= 60 && szy <=90)
+    count += 1
+}
+console.log(count);
+
 
 </script>
 
