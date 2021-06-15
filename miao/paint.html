@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="500" height="500"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.round(x)
+    y = Math.round(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+    
+  /**
+   * YOUR TASK
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条实线
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个个空心的圆，居中：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+        如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变幻后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+  // YOUR CODE GOES BELOW
+  
+   dot(42,42,'red')//在 坐标 (42, 42) 画出一个点
+   
+   var a = 40 
+   var b = 20 
+   for(i = 0; i < 20 ; i++ ){
+     a += 1
+     dot(a,b)
+   }
+   //画一条实线
+  
+   var c = 40 
+   var d = 10 
+   for(i = 0; i < 10 ; i++ ){
+     c += 2
+     dot(c,d)
+   }
+   //一个实点一个空点的线段 
+
+   var e = 70 
+   var f = 10 
+   var ea = e + 1 
+   for(i = 0; i < 10 ; i++ ){
+     e += 4
+     ea += 4
+      //俩实点俩虚点 
+     dot(e,f)
+     dot(ea, f)
+   }
+
+
+   var g = 120 
+   var h = 10 
+   var ga = g + 1 
+   var gb = g + 2 
+   for(i = 0; i < 20 ; i++ ){
+     g += 5
+     ga += 5
+     gb += 5
+     //三实点俩虚点 
+     dot(g,h)
+     dot(ga,h) 
+     dot(gb,h)
+   }
+
+   //00到500,500  左上到右下
+   var aa = 0 
+   var bb = 0 
+   for(i = 0 ; i < 500; i++ ){
+     aa += 1
+     bb += 1 
+     dot(aa,bb)
+   }
+   
+
+
+  var cc = 200
+  var dd = 10
+  for (i = 0;i < 100 ;i++ ){
+    cc += 1 
+    dot(cc ,dd ,'green')
+  }
+
+  var ee = 200 
+  var ff = 10
+  for( i = 0;i < 50 ;i++ ){
+    ff += 1 
+    dot(ee ,ff ,'green')
+  }
+  
+  var ca = 300
+  var da = 10
+  for (i = 0;i < 50 ;i++ ){
+    da += 1 
+    dot(ca ,da ,'green')
+  }
+   
+  var ea = 200
+  var db = 60
+  for (i = 0;i < 100 ;i++ ){
+    ea += 1 
+    dot(ea ,db ,'green')
+  }
+  
+
+  
+  for(var i = 0; i < 101 ;i++){
+    for(var j = 0;j < 51 ;j++){
+      dot(i+305,j+10,'red')
+    }
+    
+  }
+  
+  var a = 250 
+  var b = 250 
+  var r = 50
+  for(var degree=0;degree < 2 * Math.PI; degree+=0.01){
+  var x = r * Math.sin(degree )  
+  var y = r * Math.cos(degree )
+  dot(a+x,b+y)
+}
+
+  var a = 250 
+  var b = 250 
+  var r = 100
+  for(var degree=0;degree < 2 * Math.PI; degree+=0.01){//每隔0.01画一个点
+  var x = r * Math.sin(degree )  
+  var y = r * Math.cos(degree )
+  dot(a+x,b+y)
+}
+  var a = 90
+  var b = 250 
+  var r = 50
+  for(var degree=0;degree < 2 * Math.PI; degree+=0.01){
+  var x = r * Math.sin(degree)  
+  var y = r * Math.cos(degree)
+  dot(a+x,b+y)
+}
+//   var a = 250 
+//   var b = 250 
+//   var r = 100
+//   for(var degree=0;degree < 360;degree ++){
+//   var x= r * Math.sin(degree * Math.PI / 180)
+//   var y =r * Math.cos(degree * Math.PI / 180)
+//   dot(a+x,b+y)
+// }
+
+</script>
+</html>
