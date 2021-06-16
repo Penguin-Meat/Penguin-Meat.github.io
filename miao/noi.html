@@ -1,3 +1,61 @@
+<!-- 
+narcissistic: 输入一个数，判断是否是水仙花数
+narcissistics: 输出10000以内的水仙花数
+palindrom: 判断一个数是否是回文数字
+weekday: 输入年份与月份，输出这个月的第一天是周几
+complete-number: 判断一个数是否是完全数
+complete-numbers: 输出1000以内的完全数
+prime: 判断一个数是否是素数
+primes: 输出1000以内的素数
+lcf&lcm: 输入两个数，输出它们的最大公约数和最小公倍数
+sqrt: 求一个数的平方根 -->
+<script id ="narcissistic">
+   
+    let a = +prompt()
+    console.log(Narcissistic(a))
+    
+    function Narcissistic (a){
+    
+    let x = a % 10
+    let y = (a % 100 - x) / 10
+    let z = (a - x - y * 10) / 100
+    if ((Math.pow(x, 3) + Math.pow(y,3) + Math.pow(z, 3) == a)){
+      console.log(true)
+    }else{
+      console.log(false)
+    }
+    
+    }
+    
+    
+    </script>
+    
+
+    <script id ="narcissistics">
+        for(var i = 1; i <= 10000; i++){
+               if(isNar(i)){
+               console.log(i)
+               }
+           }
+       
+        
+        function isNar(i){
+           
+           var x = i % 10 //个 
+           var y = (i % 100 - x) / 10 // 十 
+           var z = (i - x - y * 10) / 100 // 百 
+           var n = (i - x - y * 10 - z * 100) / 1000 //千位 
+         
+           if(Math.pow(x, 3) + Math.pow(y,3) + Math.pow(z, 3) + Math.pow(n, 3) == i){
+             
+             return true 
+           }
+          
+         }
+       </script>
+
+
+
 <script id="ch0103/01" type="...">
     var a = Number(prompt("输入a:")) 
     var b = Number(prompt("输入b:")) 
