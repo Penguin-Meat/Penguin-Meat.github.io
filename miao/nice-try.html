@@ -1,22 +1,17 @@
 <script>
- for(var i = 1; i <= 10000; i++){
-        if(isNar(i)){
-        console.log(i)
+ function isPrinme(n) {
+        if(n == 0 || n==1){
+            return false;
         }
+        if(n==2){
+            return true;
+        }
+        for(var i=2;i<Math.sqrt(n);i++){
+            if(n%i == 0){
+                return false;
+            }
+        }
+        return true;
     }
-
- 
- function isNar(i){
-    
-    var x = i % 10 //个 
-    var y = (i % 100 - x) / 10 // 十 
-    var z = (i - x - y * 10) / 100 // 百 
-    var n = (i - x - y * 10 - z * 100) / 1000 //千位 
   
-    if(Math.pow(x, 3) + Math.pow(y,3) + Math.pow(z, 3) + Math.pow(n, 3) == i){
-      
-      return true 
-    }
-   
-  }
 </script>

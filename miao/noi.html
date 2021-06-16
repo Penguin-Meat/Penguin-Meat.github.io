@@ -54,7 +54,23 @@ sqrt: 求一个数的平方根 -->
          }
        </script>
 
-
+<script id = prime>
+    function isPrime(n) {
+           if(n == 0 || n==1){
+               return false;
+           }
+           if(n==2){
+               return true;
+           }
+           for(var i=2;i<Math.sqrt(n);i++){
+               if(n%i == 0){
+                   return false;
+               }
+           }
+           return true;
+       }
+     
+   </script>
 
 <script id="ch0103/01" type="...">
     var a = Number(prompt("输入a:")) 
