@@ -172,14 +172,16 @@
   var y = r * Math.cos(degree )
   dot(a+x,b+y)
 }
-  var a = 90
-  var b = 250 
-  var r = 50
-  for(var degree=0;degree < 2 * Math.PI; degree+=0.01){
-  var x = r * Math.sin(degree)  
-  var y = r * Math.cos(degree)
-  dot(a+x,b+y)
-}
+  
+  for(x = 5 ; x <= 205; x ++ ) {//这个画圆的方法是两点坐标之间的距离的点 x为什么是要在这个范围内 是因为x在这个圆的范围内 半径是已知的 
+    for(y = 290 ; y <= 490 ; y++ ){
+      if(Math.pow((x - 105), 2)+ Math.pow((y - 390),2) <= 10000){
+        dot(x,y,'yellow')
+      }
+    }
+  }
+
+  
 //   var a = 250 
 //   var b = 250 
 //   var r = 100
