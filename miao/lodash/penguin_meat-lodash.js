@@ -27,10 +27,32 @@ var penguin_meat = function () {
     return res
 
   }
+  //https://www.lodashjs.com/docs/lodash.sum 
+  function sum(array) {
+    var sum = 0
+
+    for (var i = 0; i < array.length; i++) {
+      sum += array[i]
+    }
+    return sum
+
+  }
+
+  //https://www.lodashjs.com/docs/lodash.isNaN
+  function isNaN(value) {
+    return (value == NaN ? true : false)
+
+  }
+
+
+
+
   return {
     chunk: chunk,
     compact: compact,
     difference: difference,
+    sum: sum,
+    isNaN: isNaN,
   }
 
 

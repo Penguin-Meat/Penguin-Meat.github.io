@@ -1,8 +1,10 @@
-function bubbleSort(Array) {
-  for (var j = 0; j < Array.length - 1; j++) {
-    for (var i = 0; i < Array.length - 1 - j; i++) {
-      Math.Array[i] = i
+function difference(a, ...arg) {
+  var arr = [].concat(...arg),
+    result = [];
+  for (var i = 0; i < a.length; i++) {
+    if (!arr.includes(a[i])) {
+      result.push(a[i]);
     }
   }
-  return Array
+  return result;
 }
