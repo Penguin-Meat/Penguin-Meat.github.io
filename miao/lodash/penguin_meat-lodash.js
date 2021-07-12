@@ -157,7 +157,7 @@ var penguin_meat = function () {
     }
     var min = Infinity
     for (var i = 0; i < arr.length; i++) {
-      if (min < arr[i]) {
+      if (min > arr[i]) {
         min = arr[i]
       }
     }
