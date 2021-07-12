@@ -82,8 +82,7 @@ var penguin_meat = function () {
     if (number > array.length) {
       return []
     } else {
-      return array.slice
-
+      return array.slice(0, array.length - number)
     }
 
   }
@@ -166,6 +165,16 @@ var penguin_meat = function () {
   }
 
 
+  //https://www.lodashjs.com/docs/lodash.reverse
+  function reverse(arr) {
+    var rev = []
+    for (var i = arr.length - 1; i >= 0; i--) {
+      rev.push(arr[i])
+    }
+    return rev
+  }
+
+
 
 
 
@@ -194,6 +203,7 @@ var penguin_meat = function () {
     lastIndexOf: lastIndexOf,
     max: max,
     min: min,
+    reverse: reverse,
 
   }
 
