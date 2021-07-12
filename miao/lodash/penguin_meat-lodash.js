@@ -40,7 +40,7 @@ var penguin_meat = function () {
 
   //https://www.lodashjs.com/docs/lodash.isNaN
   function isNaN(value) {
-    return (value == NaN ? true : false)
+    return value == NaN
 
   }
 
@@ -67,7 +67,7 @@ var penguin_meat = function () {
   }
 
   //https://www.lodashjs.com/docs/lodash.drop
-  function drop(array, number) {
+  function drop(array, number = 1) {
     var res = []
     for (var i = number; i < array.length; i++) {
       res.push(array[i])
@@ -78,7 +78,7 @@ var penguin_meat = function () {
 
 
   //https://www.lodashjs.com/docs/lodash.dropRight
-  function dropRight(array, number) {
+  function dropRight(array, number = 1) {
     if (n > array.length) {
       return []
     } else {
@@ -87,6 +87,32 @@ var penguin_meat = function () {
     }
 
   }
+
+  //https://www.lodashjs.com/docs/lodash.concat
+  function concat(array, value) {
+    var newArray = []
+
+  }
+
+  //https://www.lodashjs.com/docs/lodash.isUndefined
+  function isUndefined(value) {
+    return value == undefined
+  }
+
+
+  //https://www.lodashjs.com/docs/lodash.isNil
+  function isNill(value) {
+    return (value == null || value == undefined ? true : false)
+  }
+
+  //https://www.lodashjs.com/docs/lodash.isNull
+  function isNull(value) {
+    return value == null
+  }
+
+
+
+
 
   return {
     chunk: chunk,
@@ -98,6 +124,10 @@ var penguin_meat = function () {
     slice: slice,
     drop: drop,
     dropRight: dropRight,
+    concat: concat,
+    isUndefined: isUndefined,
+    isNill: isNill,
+    isNull: isNull,
 
   }
 
