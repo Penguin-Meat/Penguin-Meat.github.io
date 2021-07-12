@@ -79,7 +79,7 @@ var penguin_meat = function () {
 
   //https://www.lodashjs.com/docs/lodash.dropRight
   function dropRight(array, number = 1) {
-    if (n > array.length) {
+    if (number > array.length) {
       return []
     } else {
       return array.slice
@@ -96,19 +96,80 @@ var penguin_meat = function () {
 
   //https://www.lodashjs.com/docs/lodash.isUndefined
   function isUndefined(value) {
-    return value == undefined
+    return value === undefined
   }
 
 
   //https://www.lodashjs.com/docs/lodash.isNil
   function isNill(value) {
-    return (value == null || value == undefined ? true : false)
+    return (value === null || value === undefined ? true : false)
   }
 
   //https://www.lodashjs.com/docs/lodash.isNull
   function isNull(value) {
-    return value == null
+    return value === null
   }
+
+  //https://www.lodashjs.com/docs/lodash.last
+  function last(array) {
+    var l = array.length
+    return array[l - 1]
+  }
+
+  //https://lodash.com/docs/4.17.15#head
+  function head(array) {
+    if (!array) {
+      return []
+    } else {
+      return array[0]
+    }
+  }
+
+
+  //https://www.lodashjs.com/docs/lodash.lastIndexOf
+  function lastIndexOf(arr, value, index = arr.length - 1) {
+    for (i = index; i >= 0; i--) {
+      if (arr[i] == value) {
+        return i
+      }
+    }
+    return -1
+  }
+
+
+  //https://www.lodashjs.com/docs/lodash.max
+  function max(arr) {
+    var max = -Infinity
+    if (arr.length == 0) {
+      return undefined
+    }
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i]
+      }
+    }
+    return max
+  }
+
+  //https://www.lodashjs.com/docs/lodash.min
+  function min(arr) {
+    if (arr.length == 0) {
+      return undefined
+    }
+    var min = Infinity
+    for (var i = 0; i < arr.length; i++) {
+      if (min < arr[i]) {
+        min = arr[i]
+      }
+    }
+    return min
+  }
+
+
+
+
+
+
 
 
 
@@ -128,6 +189,11 @@ var penguin_meat = function () {
     isUndefined: isUndefined,
     isNill: isNill,
     isNull: isNull,
+    last: last,
+    head: head,
+    lastIndexOf: lastIndexOf,
+    max: max,
+    min: min,
 
   }
 
