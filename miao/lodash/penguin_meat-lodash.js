@@ -174,6 +174,32 @@ var penguin_meat = function () {
     return rev
   }
 
+  //https://www.lodashjs.com/docs/lodash.add
+  function add(a, b) {
+    return a + b
+  }
+
+  //https://www.lodashjs.com/docs/lodash.divide
+  function divide(a, b) {
+    return a / b
+  }
+
+  //https://www.lodashjs.com/docs/lodash.subtract
+  function subtract(a, b) {
+    return a - b
+  }
+
+  //https://www.lodashjs.com/docs/lodash.mean
+  function mean(arr) {
+    var sum = 0
+    for (var i = 0; i < arr.length; i++) {
+      sum += arr[i]
+    }
+    return sum / arr.length
+  }
+
+
+
 
 
 
@@ -204,6 +230,11 @@ var penguin_meat = function () {
     max: max,
     min: min,
     reverse: reverse,
+    add: add,
+    divide: divide,
+    mean: mean,
+    subtract: subtract,
+
 
   }
 
