@@ -45,14 +45,59 @@ var penguin_meat = function () {
   }
 
 
+  //https://www.lodashjs.com/docs/lodash.indexOf
+  function indexOf(array, value, number) {
+    for (var i = number; i < array.length; i++) {
+      if (array[i] == value) {
+        return i
+      }
+    }
+    return -1
+
+  }
+
+  //https://www.lodashjs.com/docs/lodash.slice
+  function slice(array, start, end) {
+    var res = []
+    var end = array.length
+    for (var i = start; i < end - 1; i++) {
+      res.push(array[i])
+    }
+    return res
+  }
+
+  //https://www.lodashjs.com/docs/lodash.drop
+  function drop(array, number) {
+    var res = []
+    for (var i = number; i < array.length; i++) {
+      res.push(array[i])
+    }
+    return res
+
+  }
 
 
+  //https://www.lodashjs.com/docs/lodash.dropRight
+  function dropRight(array, number) {
+    if (n > array.length) {
+      return []
+    } else {
+      return array.slice
+
+    }
+
+  }
   return {
     chunk: chunk,
     compact: compact,
     difference: difference,
     sum: sum,
     isNaN: isNaN,
+    indexOf: indexOf,
+    slice: slice,
+    drop: drop
+    dropRight: dropRight
+
   }
 
 
