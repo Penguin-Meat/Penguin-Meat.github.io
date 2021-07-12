@@ -1,7 +1,8 @@
-var shark = function () {
+var penguin_meat = function () {
   function chunk() {
 
   }
+
   function compact(array) {
     if (!array) {
       return []
@@ -14,6 +15,7 @@ var shark = function () {
     }
     return res
   }
+
   function difference(array, value) {
     var res = [] //建一个新的数组存储
     for (var i = 0; i < array.length; i++) {
@@ -33,8 +35,4 @@ var shark = function () {
 
 
 
-
-
-
-
-}
+}()
