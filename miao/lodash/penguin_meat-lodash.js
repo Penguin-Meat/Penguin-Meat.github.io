@@ -46,7 +46,7 @@ var penguin_meat = function () {
 
 
   //https://www.lodashjs.com/docs/lodash.indexOf
-  function indexOf(array, value, number) {
+  function indexOf(array, value, number = 0) {
     for (var i = number; i < array.length; i++) {
       if (array[i] == value) {
         return i
