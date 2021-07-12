@@ -87,6 +87,7 @@ var penguin_meat = function () {
     }
 
   }
+
   return {
     chunk: chunk,
     compact: compact,
@@ -95,11 +96,9 @@ var penguin_meat = function () {
     isNaN: isNaN,
     indexOf: indexOf,
     slice: slice,
-    drop: drop
-    dropRight: dropRight
+    drop: drop,
+    dropRight: dropRight,
 
   }
-
-
 
 }()
