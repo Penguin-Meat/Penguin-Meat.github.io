@@ -1,0 +1,55 @@
+<script>
+  //求最小值 
+  function min(x,y){
+    return x > y ? x : y //三元运算 当 a > b 时为真 输出 : 号 左边也就是a的值 为假时相反
+  }
+  var x = prompt()
+  var y = prompt()
+  
+  console.log(min(x,y))
+
+</script>
+
+<script>
+ 
+ function isEven(N){
+   if(N < 0 )
+   return isEven( -N )
+   if(N == 1)
+   return false 
+   if(N == 0)
+   return true 
+  //  else 
+  //  return ((N - 2) % 2) == 0 ?  "偶数" : "奇数" 不能有 % 2 来做 
+   isEven(N - 2) //递归回去前面判断 
+ }
+
+</script>
+
+<script>
+ 
+  function countBs(str){
+    var count = 0
+   for( var i = 0 ; i < str.length ;i ++ ){
+     if (str[i] == 'B'){    //取出字符串中的第几个字符 取出来还是字符 
+       count++ 
+     }
+   }
+     return count 
+  }
+  countBs('SJSBDGKJSDFGDFBCBBDSBGSDBFB')
+ </script>
+ <script>
+ var x = []
+ for(var i = 0; i < 5 ; i++){
+   var num = prompt()
+   a.push(num)
+ }
+ for(var )
+
+
+
+
+
+
+ </script>

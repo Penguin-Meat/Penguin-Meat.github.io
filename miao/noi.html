@@ -9,6 +9,95 @@ prime: 判断一个数是否是素数
 primes: 输出1000以内的素数
 lcf&lcm: 输入两个数，输出它们的最大公约数和最小公倍数
 sqrt: 求一个数的平方根 -->
+<script id ="palindrom">
+
+    //思路是把数字反转  反转等于原来的数字 就是回文数 
+    function isPlali(){
+        var reverse = 0
+        var initN = n   //拿一个数来记住n  
+        while (n){
+          var digit = n % 10 
+          reverse = reverse * 10 + digit 
+          n = ( n - digit ) / 10 
+        }
+        
+        return true  (reverse == initN )
+      
+    
+    }
+    
+ </script>
+
+<script id ="CompletnNumbers优化后的写法">
+    function isCompleteNumber(n) {
+        var sum = 1
+        var sqrt_n = Math.sqrt(n)
+    
+        for (var i = 2; i <= sqrt_n; i++) {
+            if (n % i == 0) {
+                var cp = n / i 
+                if (cp == i) {
+                    sum += i 
+                } else {
+                    sum += i + cp 
+                }
+            }
+        }
+    
+        return sum == n 
+    }
+    
+    
+    
+    </script>
+<script id ="CompletnNumber">
+    function isCompletnNumber(n){
+      var sum = 0
+      for(var i = 1 ; i < n ; i++ ){
+        if(n % i == 0){
+          sum += i
+        }
+      }
+      if (sum == n ){
+        return true
+      }else{
+        return false 
+      }
+    }
+    
+</script>
+
+<script id ="CompletnNumbers">
+    for (var x = 1 ; x < 1000 ; x++ ){
+      if(isCompletnNumber(x)){
+        console.log(x)
+      }
+    }
+    
+    
+    
+    function isCompletnNumber(n){
+      var sum = 0
+      for(var i = 1 ; i < n ; i++ ){
+        if(n % i == 0){
+          sum += i
+        }
+      }
+      if (sum == n ){
+        return true
+      }else{
+        return false 
+      }
+    }
+    
+    
+    
+    </script>
+    
+
+
+
+
 <script id ="narcissistic">
    
     let a = +prompt()
