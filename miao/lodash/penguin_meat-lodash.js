@@ -198,6 +198,40 @@ var penguin_meat = function () {
     return sum / arr.length
   }
 
+  //https://www.lodashjs.com/docs/lodash.nth
+  function nth(arr, number) {
+    if (number < 0) {
+      number = arr.length + number
+      return arr[number]
+    }
+  }
+
+  //https://www.lodashjs.com/docs/lodash.initial
+  function initial(arr) {
+    return arr.slice(0, arr.length - 1)
+
+  }
+
+
+
+  //https://www.lodashjs.com/docs/lodash.pull
+  function pulll(arr, value) {
+
+  }
+
+  //https://www.lodashjs.com/docs/lodash.take
+  function take(arr, n) {
+    if (n == 0) {
+      return []
+    }
+    if (n > arr.length) {
+      return arr
+    } else {
+      return arr.slice(0, n)
+    }
+  }
+
+
 
 
 
@@ -234,6 +268,11 @@ var penguin_meat = function () {
     divide: divide,
     mean: mean,
     subtract: subtract,
+    nth: nth,
+    initial: initial,
+    take: take,
+
+
 
 
   }
