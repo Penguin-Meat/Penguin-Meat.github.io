@@ -220,7 +220,7 @@ var penguin_meat = function () {
   }
 
   //https://www.lodashjs.com/docs/lodash.take
-  function take(arr, n) {
+  function take(arr, n = 1) {
     if (n == 0) {
       return []
     }
