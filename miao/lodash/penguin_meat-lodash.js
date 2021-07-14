@@ -233,6 +233,64 @@ var penguin_meat = function () {
 
 
 
+  //https://www.lodashjs.com/docs/lodash.takeRight
+  function takeRight(arr, n = 1) {
+    if (n == 0) {
+      return []
+    }
+    if (n > arr.length) {
+      return arr
+    } else {
+      return arr.slice(arr.length - 1, n)
+    }
+  }
+
+  //https://www.lodashjs.com/docs/lodash.sortedIndexOf
+  function sortedIndexOf(arr, value) {
+    for (var i = 0; i < arr.length; i++) {
+      if (value == arr[i]) {
+        return i
+      } else {
+        return -1
+      }
+    }
+  }
+
+
+
+  //https://www.lodashjs.com/docs/lodash.sortedIndex
+  function sortedIndex(arr, value) {
+
+  }
+
+
+
+  //https://www.lodashjs.com/docs/lodash.sortedLastIndex
+  function sortedLastIndex(arr, value) {
+
+
+  }
+
+
+
+  //https://www.lodashjs.com/docs/lodash.tail
+  function tail(arr) {
+    var brr = []
+    for (var i = 1; i < arr.length - 1; i++) {
+      brr.push(arr[i])
+    }
+    return brr
+  }
+
+
+
+  //https://www.lodashjs.com/docs/lodash.uniq
+  function uniq(arr) {
+
+  }
+
+
+
 
 
 
@@ -271,6 +329,11 @@ var penguin_meat = function () {
     nth: nth,
     initial: initial,
     take: take,
+    takeRight: takeRight,
+    sortedIndexOf: sortedIndexOf,
+    tail: tail,
+
+
 
 
 
