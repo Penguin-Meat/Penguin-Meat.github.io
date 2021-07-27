@@ -1,10 +1,109 @@
-function difference(a, ...arg) {
-  var arr = [].concat(...arg),
-    result = [];
-  for (var i = 0; i < a.length; i++) {
-    if (!arr.includes(a[i])) {
-      result.push(a[i]);
-    }
+unction ListNode(val) {
+  this.val = val
+  this.next = next
+}
+
+function Stack() {
+  this.xxxx = xxxxx
+}
+
+// 往栈顶增加一个元素
+Stack.prototype.push = function (val) {
+
+}
+// 从栈顶删除并返回一个元素
+Stack.prototype.pop = function () {
+
+}
+// 查看栈顶元素，不删除
+Stack.prototype.peek = function () {
+
+}
+
+function Queue() {
+  this.xxxx = xxxxx
+}
+
+// 往队列里增加一个元素
+Queue.prototype.enqueue = function (val) {
+
+}
+// 从队列中删除并返回一个元素
+Queue.prototype.dequeue = function () {
+
+}
+
+
+
+a = {}
+a.foo = function (x) {
+  console.log(x, this)   this 调用是当成了谁的方法  下面a函数是foo的方法
+  所以this打印出的是 a
+}
+f(x){
+  console.log(x, this)
+}
+a.foo(888)
+能log出什么 ?
+  答案是 888 { foo: f }
+
+
+
+
+
+
+function MySet() {
+
+
+}
+
+MySet.prototype.add
+MySet.prototype.has
+MySet.prototype.delete
+MySet.prototype.clear
+MySet.prototype.size
+
+
+function map(arr, mapper) {
+  var mapper = []
+  for (var i = 0; i < arr.length; i++) {
+    mapper.push(arr[i])
   }
-  return result;
+  return mapper
+}
+
+var array = [1, 2, 3, 4, 5, 6]
+
+var sum = 0
+for (var i = 0; i < array.length; i++) {
+  sum += array[i]
+}
+return sum
+
+var result = 1
+for (var i = 0; i < array.length; i++) {
+  result *= array[i]
+}
+return result
+
+var max = -Infinity
+for (var i = 0; i < array.length; i++) {
+  if (array[i] > max) {
+    max = array[i]
+  }
+  return max
+}
+
+function hashkey(str) {
+  var hash = 13131133
+  var seed = 113131
+  for (var i = 0; i < str.length; i++) {
+    hash = hash = seed + str.charCodeAt(i)
+  }
+  return hash
+}
+
+function reduce(array, reducer, initial) {
+  var result = initial
+  for ()
 }

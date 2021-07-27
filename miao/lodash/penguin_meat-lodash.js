@@ -276,7 +276,7 @@ var penguin_meat = function () {
   //https://www.lodashjs.com/docs/lodash.tail
   function tail(arr) {
     var brr = []
-    for (var i = 1; i < arr.length - 1; i++) {
+    for (var i = 1; i < arr.length; i++) {
       brr.push(arr[i])
     }
     return brr
@@ -287,6 +287,11 @@ var penguin_meat = function () {
   //https://www.lodashjs.com/docs/lodash.uniq
   function uniq(arr) {
 
+  }
+
+  //https://www.lodashjs.com/docs/lodash.gt
+  function gt(value, other) {
+    return value > other ? true : false
   }
 
 
@@ -314,7 +319,7 @@ var penguin_meat = function () {
     dropRight: dropRight,
     concat: concat,
     isUndefined: isUndefined,
-    isNill: isNill,
+    isNil: isNil,
     isNull: isNull,
     last: last,
     head: head,
@@ -332,6 +337,7 @@ var penguin_meat = function () {
     takeRight: takeRight,
     sortedIndexOf: sortedIndexOf,
     tail: tail,
+    gt: gt,
 
 
 
