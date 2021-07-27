@@ -240,9 +240,9 @@ var penguin_meat = function () {
     }
     if (n > arr.length) {
       return arr
-    } else {
-      return arr.slice(arr.length - 1, n)
     }
+    return arr.slice(arr.length - 1, n)
+
   }
 
   //https://www.lodashjs.com/docs/lodash.sortedIndexOf
@@ -250,10 +250,9 @@ var penguin_meat = function () {
     for (var i = 0; i < arr.length; i++) {
       if (value == arr[i]) {
         return i
-      } else {
-        return -1
       }
     }
+    return -1
   }
 
 
