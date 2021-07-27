@@ -100,7 +100,7 @@ var penguin_meat = function () {
 
 
   //https://www.lodashjs.com/docs/lodash.isNil
-  function isNill(value) {
+  function isNil(value) {
     return (value === null || value === undefined ? true : false)
   }
 
@@ -346,3 +346,5 @@ var penguin_meat = function () {
   }
 
 }()
+
+
