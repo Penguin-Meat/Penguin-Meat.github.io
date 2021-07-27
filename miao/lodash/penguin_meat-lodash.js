@@ -294,9 +294,7 @@ var penguin_meat = function () {
   }
 
 
-  function 123{
 
-  }
 
 
 
