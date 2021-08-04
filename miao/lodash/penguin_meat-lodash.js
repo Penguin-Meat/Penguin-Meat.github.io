@@ -292,7 +292,7 @@ var penguin_meat = function () {
 
   //https://lodash.shujuwajue.com/array/fill
   function fill(array, value, start = 0, end = array.length) {
-    for (var i = start, ; i < end; i++) {
+    for (var i = start; i < end; i++) {
       array[i] = value
     }
     return array
