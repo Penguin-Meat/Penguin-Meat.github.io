@@ -16,17 +16,13 @@ var penguin_meat = function () {
     return res
   }
 
-  function difference(array, value) {
-    var res = [] //建一个新的数组存储
-    for (var i = 0; i < array.length; i++) {
-      if (!array[i].include(value[i])) {
-        //如果不在value里面 那么添加到新的数组里 
-        res.push(array[i])
-      }
-    }
-    return res
+  function difference(array, ...value) {
+    var ary = [].concat(...value)
+    return array.filter(item => !ary.includes(item))
 
   }
+
+
   //https://www.lodashjs.com/docs/lodash.sum 
   function sum(array) {
     var sum = 0
@@ -294,7 +290,13 @@ var penguin_meat = function () {
   }
 
 
-
+  //https://lodash.shujuwajue.com/array/fill
+  function fill(array, value, [start = 0], [end = array.length]) {
+    for (var i = start, ; i < end; i++) {
+      array[i] = value
+    }
+    return array
+  }
 
 
 
@@ -337,6 +339,8 @@ var penguin_meat = function () {
     sortedIndexOf: sortedIndexOf,
     tail: tail,
     gt: gt,
+    fill: fill,
+
 
 
 
