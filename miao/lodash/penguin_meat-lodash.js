@@ -3,22 +3,6 @@ var penguin_meat = function () {
 
 
   //以下为迭代方法 
-  function iteratee(value) {
-    if (typeof value == 'function') {
-      return value
-    }
-    if (typeof value == 'string') {
-      return property(value)
-    }
-    if (Array.isArray(value)) { //判断是否是数组 
-      return matchesProperty(...value)
-    }
-    if (typeof value == 'object') {
-      return matches(...value)
-    }
-
-  }
-
   function matchesProperty(ary) { //数组 
     let key = ary[0] //数组第一项是属性名
     let value = ary[1] //数组第二项是属性值
@@ -36,6 +20,24 @@ var penguin_meat = function () {
       return ture
     }
   }
+
+  function iteratee(value) {
+    if (typeof value == 'function') {
+      return value
+    }
+    if (typeof value == 'string') {
+      return property(value)
+    }
+    if (Array.isArray(value)) { //判断是否是数组 
+      return matchesProperty(...value)
+    }
+    if (typeof value == 'object') {
+      return matches(...value)
+    }
+
+  }
+
+
   //开始写lodash 
   function map(collection, predicate) {
     predicate = iteratee(predicate)
