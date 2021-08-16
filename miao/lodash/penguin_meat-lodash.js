@@ -10,7 +10,7 @@ var penguin_meat = function () {
     if (typeof value == 'string') {
       return property(value)
     }
-    if (Array.isArray(value)) { //判断是否是数组 
+    if (Array.isArray(value) == ) { //判断是否是数组 
       return matchesProperty(...value)
     }
     if (typeof value == 'object') {
@@ -34,7 +34,7 @@ var penguin_meat = function () {
     predicate = iteratee(predicate)
     let res = []
     for (let key in collection) {
-      if (predicate(collection[key], key, collection) == true) {
+      if (predicate(collection[key], key, collection)) {
         res.push(collection[key])
       }
     }
@@ -51,7 +51,6 @@ var penguin_meat = function () {
     }
     return res
   }
-
 
 
 
@@ -133,6 +132,53 @@ var penguin_meat = function () {
       return array.slice(0, array.length - number)
     }
 
+  }
+
+  function dropRightWhile(array, predicate) {
+    predicate = iteratee(predicate)
+    for (let i = array.length - 1; i >= 0; i--) {
+      if (!predicate(array[i])) { //当不相等时 跳出循环  
+        break
+      }
+    }
+    return array.slice(0, i + 1)
+
+  }
+
+  function dropWhile(array, predicate) {
+    predicate = iteratee(predicate)
+    for (let i = 0; i < array.length; i++) {
+      if (!predicate(array[i])) {
+        break
+      }
+    }
+    return array.slice(i)
+  }
+
+
+  function findIndex(array, predicate, number = 0) {
+    predicate = iteratee(predicate)  //要考虑number小于0的情况 
+    let start = number >= 0 ? number : array.length + number // 大于等于0直接用number 不然加上数组长度 
+
+    for (let i = start; i < array.length; i++) {
+      if (predicate(array[i])) {
+        return i
+      }
+    }
+    return -1
+  }
+
+
+  function findLastIndex(array, predicate, number = array.length - 1) {
+    predicate = iteratee(predicate)
+    let start = number
+
+    for (let i = start; i >= array.length; i--) {
+      if (predicate(array[i])) {
+        return i
+      }
+    }
+    return -1
   }
 
   //https://www.lodashjs.com/docs/lodash.concat
@@ -414,6 +460,12 @@ var penguin_meat = function () {
     get: get,
     filter: filter,
     map: map,
+    dropRightWhile: dropRightWhile,
+    dropWhile: dropWhile,
+    findIndex: findIndex,
+    findLastIndex: findLastIndex,
+
+
 
 
 
