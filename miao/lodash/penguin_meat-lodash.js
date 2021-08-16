@@ -47,7 +47,7 @@ var penguin_meat = function () {
     }
     let res = []
     for (let i = 0; i < array.length; i += size) {
-      res.push(array.sliece(i, i + size))
+      res.push(array.slice(i, i + size))
     }
     return res
   }
