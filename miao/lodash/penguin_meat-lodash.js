@@ -10,7 +10,7 @@ var penguin_meat = function () {
     if (typeof value == 'string') {
       return property(value)
     }
-    if (Array.isArray(value) == ) { //判断是否是数组 
+    if (Array.isArray(value)) { //判断是否是数组 
       return matchesProperty(...value)
     }
     if (typeof value == 'object') {
