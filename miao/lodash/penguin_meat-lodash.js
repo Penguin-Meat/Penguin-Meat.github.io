@@ -18,6 +18,24 @@ var penguin_meat = function () {
     }
 
   }
+
+  function matchesProperty(ary) { //数组 
+    let key = ary[0] //数组第一项是属性名
+    let value = ary[1] //数组第二项是属性值
+    return function (obj) {
+      return obj[key] === value //判断是否存在与obj里面  
+    }
+  }
+
+  function matches(obj) {     //对象 
+    return function (src) {
+      for (let key in obj) { //看obj的参数是否在src里面 
+        if (obj[key] !== src[key])
+          return false
+      }
+      return ture
+    }
+  }
   //开始写lodash 
   function map(collection, predicate) {
     predicate = iteratee(predicate)
