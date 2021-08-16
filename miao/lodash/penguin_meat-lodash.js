@@ -3,6 +3,14 @@ var penguin_meat = function () {
 
 
   //以下为迭代方法 
+
+  function property(属性名) {   //string 
+    return function (obj) {
+      obj[属性名]  //求出属性值 
+    }
+  }
+
+
   function matchesProperty(ary) { //数组 
     let key = ary[0] //数组第一项是属性名
     let value = ary[1] //数组第二项是属性值
