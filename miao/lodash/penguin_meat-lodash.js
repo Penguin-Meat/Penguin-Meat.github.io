@@ -1,7 +1,59 @@
 var penguin_meat = function () {
-  function chunk() {
+  //以下为判断类的方法
+
+
+  //以下为迭代方法 
+  function iteratee(value) {
+    if (typeof value == 'function') {
+      return value
+    }
+    if (typeof value == 'string') {
+      return property(value)
+    }
+    if (Array.isArray(value)) { //判断是否是数组 
+      return matchesProperty(...value)
+    }
+    if (typeof value == 'object') {
+      return matches(...value)
+    }
 
   }
+  //开始写lodash 
+  function map(collection, predicate) {
+    predicate = iteratee(predicate)
+    let result = []
+    for (let key in collection) {
+      result.push(predicate(collection[key]), key, collection)
+    }
+    return result
+
+  }
+
+
+  function filter(collection, predicate) {
+    predicate = iteratee(predicate)
+    let res = []
+    for (let key in collection) {
+      if (predicate(collection[key], key, collection == true)) {
+        res.push(collection[key])
+      }
+    }
+    return res
+  }
+
+  function chunk(array, size) {
+    if (size >= array.length) {
+      return array
+    }
+    let res = []
+    for (let i = 0; i < array.length; i += size) {
+      res.push(array.sliece(i, i + size))
+    }
+    return res
+  }
+
+
+
 
   function compact(array) {
     if (!array) {
@@ -298,6 +350,25 @@ var penguin_meat = function () {
     return array
   }
 
+  //https://lodash.shujuwajue.com/array/uniq
+  function uniq(array) {
+    let arr = []
+    for (let i = 0; i < array.length; i++) {
+      if (arr.indexOf(array[i]) === -1) {
+        arr.push(array[i])
+      }
+    }
+    return arr
+  }
+
+  //https://lodash.shujuwajue.com/array/uniqwithff08-shu-zu-qu-zhong-ff09
+  function uniqWith(array, [comparator]) {
+
+  }
+
+  function get(object, path, defaultVulue) {
+
+  }
 
 
 
@@ -340,7 +411,8 @@ var penguin_meat = function () {
     tail: tail,
     gt: gt,
     fill: fill,
-
+    get: get,
+    filter: filter,
 
 
 
