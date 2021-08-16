@@ -34,14 +34,14 @@ var penguin_meat = function () {
     predicate = iteratee(predicate)
     let res = []
     for (let key in collection) {
-      if (predicate(collection[key], key, collection == true)) {
+      if (predicate(collection[key], key, collection) == true) {
         res.push(collection[key])
       }
     }
     return res
   }
 
-  function chunk(array, size) {
+  function chunk(array, size = 1) {
     if (size >= array.length) {
       return array
     }
@@ -413,6 +413,7 @@ var penguin_meat = function () {
     fill: fill,
     get: get,
     filter: filter,
+    map: map,
 
 
 
