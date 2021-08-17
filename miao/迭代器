@@ -24,8 +24,41 @@ function matchesProperty(ary) { //数组
   }
 }
 
-function get(object, path) {
-  if (typeof path == 'string') {
 
+//  循环写法  最好的写法 因为为空时可以停止可以提前返回 
+function get(object, path, defaultVulue) { //获取一个对象 某个路径下的值 
+  for (let p of object) {
+    if (object == underfined) {
+      return defaultVulue
+    } else {
+      object = object[p]
+    }   //循环获取属性 object[a] a属性里的 object[b]属性 在path的属性名里循环
+  }
+  return object
+}
+
+//reduce写法 不合适 
+function get(object, path, defaultVulue) { //获取一个对象 某个路径下的值 
+  return path.reduce((obj, curPath) => { }
+    , object)
+}
+
+//写基础框架时要考虑效率
+
+
+//递归写法  获取obj的[1,2,3,4]属性 等价于 获取obj[1]的 [2,3,4]属性 
+function get(object, path, defaultVulue = undefined) {
+  if (object == undefined) {
+    return defaultVulue
+  } else if (path.length == 0) {
+    return object
+  } else {
+    return get(object[path[0]], path.slice(1))
+  }
+}
+
+function toPath(value) {
+  if (Array.isArray(value)) {
+    return value
   }
 }
