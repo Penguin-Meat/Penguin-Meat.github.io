@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    pre {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      font-size: 40px;
+      transform: translate(-50%, -50%);
+      letter-spacing: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>像素游戏: 贪吃蛇</h1>
+  <pre></pre>
+  <script>
+    class SnakeGame {
+      constructor(width = 10, height = 10) {
+        this.width = width
+        this.height = height
+        this.world = null
+        this.snakeLength = 0//蛇身体的长度
+        this.headpos = null//蛇头位置   {x:5,y:8}
+        this.tailpos = null//蛇尾的位置
+        this.init()   //一开始就得初始化一下生成出游戏棋盘
+      }
+      //初始化棋盘的大小  蛇头的方向蛇头的位置蛇尾的位置蛇身的长度   和生成苹果的位置
+      init() {
+        this.world = Array(this.height).fill(0).map(it => Array(this.width).fill('.'))
+        this.world[3][3] = '>'
+        this.snakeLength = 1
+        this.headpos = { row: 3, col: 3 }
+        this.tailpos = { row: 3, col: 3 }
+        // this.world[3][4] = '>'
+        this.placeApple()
+      }
+      // 用来生成苹果位置的函数
+      placeApple() {
+        //不能随机生成到蛇身
+        let row = Math.floor(this.height * Math.random())
+        let col = Math.floor(this.width * Math.random())
+        if (this.world[row][col] == '.') {
+          this.world[row][col] = 'Q'
+        }
+        else {    //如果不是点说明随机到了蛇的身上  那就重新随机
+          this.placeApple()
+        }
+      }
+      // 返回世界某个坐标的符号  
+      getChar(pos) {
+        if (this.world[pos.row] && this.world[pos.row][pos.col]) {
+          return this.world[pos.row][pos.col]
+        }
+        else {
+          this.gameover()
+        }
+      }
+      //获取pos位置指向的下一个位置的符号
+      getNextPos(pos) {
+        var currChar = this.getChar(pos)
+        if (currChar == '>') { return { row: pos.row, col: pos.col + 1 } }
+        if (currChar == '<') { return { row: pos.row, col: pos.col - 1 } }
+        if (currChar == '^') { return { row: pos.row - 1, col: pos.col } }
+        if (currChar == 'v') { return { row: pos.row + 1, col: pos.col } }
+      }
+      // 让某个位置的符号变成指定的符号
+      setChar(pos, char) {
+        this.world[pos.row][pos.col] = char
+      }
+      gameover() {
+        setTimeout(() => {
+          alert('game over')
+          this.init()
+        });
+      }
+      next() {
+        let headChar = this.getChar(this.headpos)  //头的符号
+        var headNextPos = this.getNextPos(this.headpos) //头的下一个位置的坐标
+        var headNextChar = this.getChar(headNextPos)//头的下一个位置的符号
+        // 头的下一个位置的符号有三种可能 是空位置是蛇身体是苹果
+        if (headNextChar == '.') {//首先是空位置
+          this.setChar(headNextPos, headChar) //那这个空位置将变为蛇头的符号
+          this.headpos = headNextPos     //更新蛇头的位置
+        } else if (headNextChar == 'Q') { //下一个位置苹果  就吃了苹果  蛇头处理和下一个位置为空位置的处理一样 但要更新苹果位置
+          this.setChar(headNextPos, headChar)
+          this.headpos = headNextPos     //更新蛇头的位置
+          this.placeApple()    //更新苹果的位置
+        } else {   //下一个符号不是空位置也不是苹果那就只能是蛇身或者边界了   那游戏就结束了
+          this.gameover()
+        }
+        //*****重点在这里  如果吃到了苹果长度是加在蛇头上的  
+        //没有吃到苹果蛇头更新到下一个位置下一个位置变成蛇头的符号  那蛇尾为了保持原来长度就得把原位置是蛇尾的符号变为空
+        // 如果吃到苹果了蛇头更新到下一个位置下一个位置变成蛇头的符号  在这（一步）上蛇尾可以不用动一次  那整个蛇身长度就加了1
+        // 所以这里的判断主要处理没吃到苹果的情况  需要更新蛇尾的符号    
+        // 因为如果吃到苹果了在这一步上不需要要把蛇尾符号变为空所以根本无需操作
+        if (headNextChar == '.') {
+          var tailNextPos = this.getNextPos(this.tailpos) //蛇尾的下一个位置的坐标
+          this.setChar(this.tailpos, '.')   //把当前蛇尾的位置的符号设置为空  .
+          this.tailpos = tailNextPos   //更新蛇尾的位置
+        }
+        return this
+      }
+
+      // 用键盘来操作控制蛇的方向
+      changeDrection(direction) {
+        switch (direction) {
+          case 'up': return this.setChar(this.headpos, '^')
+          case 'down': return this.setChar(this.headpos, 'v')
+          case 'left': return this.setChar(this.headpos, '<')
+          case 'right': return this.setChar(this.headpos, '>')
+        }
+      }
+      print() {
+        console.log(this.toString())
+      }
+      toString() {
+        return this.world.map(row => {
+          return row.map(col => {
+            if (col == '.') {
+              return '□'
+            } else {
+              return '■'
+            }
+          }).join('')
+        }).join('\n')
+      }
+    }
+
+    var game = new SnakeGame()
+
+
+
+    var pre = document.querySelector('pre')
+    pre.textContent = game.toString()
+
+    function tick() {
+      game.next()
+      pre.textContent = game.toString()
+    }
+    var id = setInterval(tick, 1000);
+
+
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key.startsWith('Arrow')) {
+        var direction = e.key.slice(5).toLocaleLowerCase()
+        clearInterval(id)
+        game.changeDrection(direction)
+        tick()
+        id = setInterval(tick, 1000);
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

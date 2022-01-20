@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+
+  }
+
+  .divBox {
+    width: 400px;
+    height: 420px;
+    /* background-color: pink; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .btnBox {
+    width: 400px;
+    background-color: skyblue;
+    margin: 100px auto;
+    position: relative;
+  }
+
+  .next {
+    display: block;
+    float: left;
+
+  }
+
+  .autoBtn {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+  }
+
+  .stopBtn {
+    display: block;
+    float: right;
+  }
+
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    line-height: 5px;
+    text-align: center;
+  }
+</style>
+
+<body>
+
+  <footer class="ruleBox">
+    <p>康威生命游戏规则</p>
+    <p>每个细胞有两种状态 - 存活或死亡，每个细胞与以自身为中心的周围八格细胞产生互动</p>
+    <p>当前细胞为存活状态时，当周围的存活细胞低于2个时（不包含2个），该细胞变成死亡状态。（模拟生命数量稀少）</p>
+    <p>当前细胞为存活状态时，当周围有2个或3个存活细胞时，该细胞保持原样。</p>
+    <p>当前细胞为存活状态时，当周围有超过3个存活细胞时，该细胞变成死亡状态。（模拟生命数量过多）</p>
+    <p>当前细胞为死亡状态时，当周围有3个存活细胞时，该细胞变成存活状态。（模拟繁殖）</p>
+    <p>可以把最初的细胞结构定义为种子，当所有在种子中的细胞同时被以上规则处理后，可以得到第一代细胞图。按规则继续处理当前的细胞图，可以得到下一代的细胞图，周而复始。</p>
+  </footer>
+  <script>
+    var div = document.createElement('div')
+    div.classList.add('divBox')
+    var res = []
+    for (var i = 0; i < 20; i++) {
+      var row = []
+      for (var j = 0; j < 20; j++) {
+        var input = document.createElement('input')
+        input.type = 'checkBox'
+        input.setAttribute('data-needmodify', 'false')
+        row.push(input)
+        div.append(input)
+        if (j == 19) {
+          div.append(document.createElement('br'))
+        }
+      }
+      res.push(row)
+    }
+    document.body.append(div)
+    var nextBtn = document.createElement('button')
+    var autoBtn = document.createElement('button')
+    var stopBtn = document.createElement('button')
+    var btnBox = document.createElement('div')
+    btnBox.classList.add('btnBox')
+    nextBtn.textContent = 'next'
+    nextBtn.classList.add('next')
+    autoBtn.textContent = 'auto play'
+    autoBtn.classList.add('autoBtn')
+    stopBtn.textContent = 'stop'
+    stopBtn.classList.add('stopBtn')
+    btnBox.append(nextBtn, autoBtn, stopBtn)
+
+    document.body.append(btnBox)
+
+
+
+
+
+
+    function loop(res) {
+      for (var i = 0; i < res.length; i++) {
+        for (var j = 0; j < res[i].length; j++) {
+          var needArr = []
+          needArr.push(res[i - 1 < 0 ? 19 : i - 1][j - 1 < 0 ? 19 : j - 1])    //左上
+          needArr.push(res[i - 1 < 0 ? 19 : i - 1][j])                          //中上
+          needArr.push(res[i - 1 < 0 ? 19 : i - 1][j + 1 > 19 ? 0 : j + 1])    //右上
+          needArr.push(res[i][j - 1 < 0 ? 19 : j - 1])    //左中
+          needArr.push(res[i][j + 1 > 19 ? 0 : j + 1])    //右中
+          needArr.push(res[i + 1 > 19 ? 0 : i + 1][j - 1 < 0 ? 19 : j - 1])    //左下
+          needArr.push(res[i + 1 > 19 ? 0 : i + 1][j])    //中下
+          needArr.push(res[i + 1 > 19 ? 0 : i + 1][j + 1 > 19 ? 0 : j + 1])    //右下
+          if (res[i][j].checked) {
+            res[i][j].dataset['needmodify'] = sentenceAlreadyLive(needArr)
+          } else {
+            res[i][j].dataset['needmodify'] = sentenceAlreadyDead(needArr)
+          }
+        }
+      }
+      return res
+    }
+    var id
+    var flag = false
+    nextBtn.addEventListener('click', function (e) {
+
+      var clickRes = loop(res)
+      for (var i = 0; i < clickRes.length; i++) {
+        for (var j = 0; j < clickRes[i].length; j++) {
+          if (clickRes[i][j].dataset.needmodify == 'true') {
+            clickRes[i][j].checked = !clickRes[i][j].checked
+          }
+        }
+      }
+
+    })
+
+    autoBtn.addEventListener('click', function (e) {
+
+      if (flag == false) {
+        var mask = document.createElement('div')
+        mask.classList.add('mask')
+        var div = document.querySelector('.divBox')
+        div.append(mask)
+        flag = true
+        this.style.backgroundColor = 'pink'
+        id = setInterval(() => {
+          nextBtn.click()
+        }, 1000);
+      }
+    })
+
+    stopBtn.addEventListener('click', function (e) {
+      var mask = document.querySelector('.mask')
+      mask.parentNode.removeChild(mask)
+      flag = false
+      autoBtn.style.backgroundColor = ''
+      nextBtn.removeAttribute('disabled')
+      clearInterval(id)
+    })
+
+
+    function sentenceAlreadyLive(arr) {
+      var live = 0
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].checked) {
+          live++
+        }
+      }
+      if (live < 2 || live > 3) {
+        return 'true'
+      }
+      else if (live == 2 || live == 3) {
+        return 'false'
+      }
+    }
+
+    function sentenceAlreadyDead(arr) {
+      var live = 0
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].checked) {
+          live++
+        }
+      }
+      if (live == 3) {
+        return 'true'
+      }
+      return 'false'
+    }
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
